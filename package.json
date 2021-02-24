@@ -35,7 +35,7 @@
     "@babel/preset-env": "^7.13.5",
     "@fullhuman/postcss-purgecss": "^4.0.2",
     "ansi-colors": "^4.1.1",
-    "autoprefixer": "^10.2.4",
+    "autoprefixer": "10.2.4",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "babel-plugin-module-resolver": "^4.1.0",
@@ -55,14 +55,13 @@
     "gulp-svgstore": "^7.0.1",
     "gulp-watch": "^5.0.1",
     "gulp-zip": "^5.0.2",
-    "husky": "^5.1.1",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-pngquant": "^9.0.1",
     "node-notifier": "^9.0.0",
     "node-sass": "^5.0.0",
     "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.6",
     "postcss-assets": "^5.0.0",
-    "postcss-cli": "^8.3.1",
     "postcss-sprites": "^4.2.1",
     "pretty-quick": "^3.1.0",
     "rimraf": "^3.0.2",
@@ -73,6 +72,7 @@
     "webpack-cli": "^4.5.0"
   },
   "devDependencies": {
+    "husky": "^5.1.1",
     "prettier": "^2.2.1"
   }
 }

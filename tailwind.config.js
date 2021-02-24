@@ -9,5 +9,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  purge: ['./src/**/*.js', './src/**/*.njk', './src/**/*.svg'],
+  purge: ['./src/**/*.js', './src/**/*.jsx', './src/**/*.njk', './src/**/*.svg'],
 };

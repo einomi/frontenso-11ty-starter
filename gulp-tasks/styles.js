@@ -18,9 +18,7 @@ const PATHS = require('../paths');
 const { IS_PRODUCTION } = require('../env');
 
 const POSTCSS_PROCESSORS = [
-  autoprefixer({
-    cascade: true,
-  }),
+  autoprefixer(),
 
   assets({
     loadPaths: [PATHS.src.imagesInline],
@@ -38,22 +36,12 @@ const POSTCSS_PROCESSORS = [
         : Promise.reject(),
   }),
 
-  // tailwindcss('./tailwind.config.js'),
-  //
-  // IS_PRODUCTION &&
-  //   purgecss({
-  //     content: ['./dist/**/*.html'],
-  //     extractors: [
-  //       {
-  //         extractor: class TailwindExtractor {
-  //           static extract(content) {
-  //             return content.match(/[A-Za-z0-9-_:\/]+/g) || [];
-  //           }
-  //         },
-  //         extensions: ['css', 'html'],
-  //       },
-  //     ],
-  //   }),
+  tailwindcss('./tailwind.config.js'),
+
+  IS_PRODUCTION &&
+    purgecss({
+      content: ['./dist/**/*.html'],
+    }),
 ].filter((v) => v);
 
 module.exports = function styles() {
