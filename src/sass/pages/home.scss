@@ -1,0 +1,17 @@
+.page-home {
+  padding: 60px 0;
+
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__button {
+    margin-bottom: 60px;
+  }
+
+  &__inline-image-example {
+    background-image: inline('../assets/images/rubber-duck.png');
+    width: 150px;
+    height: 116px;
+  }
+}

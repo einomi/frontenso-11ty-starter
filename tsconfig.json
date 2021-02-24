@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "outDir": "dist/js",
+    "strict": false,
+    "alwaysStrict": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "allowJs": true,
+    "checkJs": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "watch": true,
+    "lib": ["dom", "es2017"],
+    "noEmit": true
+  },
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "webpack.config.js",
+    "gulpfile.js",
+    "gulp-tasks",
+    "dist/"
+  ]
+}

@@ -1,0 +1,36 @@
+.button {
+  @include button-reset;
+  @extend .transition-active;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(#000, 0.3);
+  height: 54px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 16px;
+  letter-spacing: -0.5px;
+  padding: 1px 20px 0;
+
+  &:hover {
+    background-color: rgba(#000, 0.3);
+    color: rgba(#000, 0.8);
+    transition: none;
+  }
+
+  &:active {
+    background-color: rgba(#000, 0.25);
+    border-color: rgba(#000, 0.25);
+
+    .button__chevron-right {
+      transform: translateX(1px);
+      transition: none;
+    }
+  }
+
+  &__chevron-right {
+    margin-left: 5px;
+    transition: transform 0.1s ease-out,
+      fill $default-transition-duration $default-transition-function;
+  }
+}

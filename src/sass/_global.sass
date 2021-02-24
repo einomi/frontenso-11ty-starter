@@ -1,0 +1,96 @@
+// .pseudo
+// 	color: #000
+// 	border-bottom: 1px dotted
+// 	cursor: pointer
+// 	&:hover
+// 		color: #333
+// 		border-bottom: 1px dotted transparent
+
+.clearfix
+  // zoom: 1
+  &:after
+    content: " "
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+    font-size: 0
+
+.invisible-container
+  position: absolute
+  top: -9999px
+  left: -9999px
+  width: 0
+  height: 0
+  overflow: hidden
+  z-index: -1
+
+// .video-container
+// 	position: relative
+// 	padding-bottom: 56.25%
+// 	padding-top: 30px
+// 	height: 0
+// 	overflow: hidden
+// 	iframe, object, embed
+// 		position: absolute
+// 		top: 0
+// 		left: 0
+// 		width: 100%
+// 		height: 100%
+
+.no-select
+  user-select: none
+
+.no-pe
+  pointer-events: none
+
+// .dragging, .dragging *
+// 	cursor: ew-resize
+// 	cursor: grabbing
+// 	cursor: -moz-grabbing
+// 	cursor: -webkit-grabbing
+// 	cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAgMAAABinRfyAAAACVBMVEUAAAD///8AAABzxoNxAAAAAXRSTlMAQObYZgAAADFJREFUCNdjQAeLuhgYmCJTFzAwhYbOYGCYGhrBwAQiOEMhRAJIIgEk0cDAoAoj4AAA6jIM345/MPUAAAAASUVORK5CYII='), auto
+
+// .draggable, .draggable *
+// 	cursor: ew-resize
+// 	cursor: grab
+// 	cursor: -moz-grab
+// 	cursor: -webkit-grab
+// 	cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAgMAAABinRfyAAAADFBMVEUAAAD///8AAADAwMAJ6vS1AAAAAXRSTlMAQObYZgAAAEVJREFUCNctxLENgDAMRcEndxkkFfMYQUeTAqZwCQN8j8CcxBLFHVhMzwXtHFHd2D7eKlnkScpXJN/oPmt/B1YhD+gV8AEVfxL3aRgilwAAAABJRU5ErkJggg=='), auto
+
+.static-text
+  p
+    margin-bottom: 1.4em
+  
+  img
+    max-width: 100%
+
+@keyframes rotating
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+// Linear png spinner
+%spinner
+  width: 20px
+  height: 20px
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAALVBMVEUAAABra2toaGhsbGxra2tsbGxra2tsbGxsbGxsbGxra2tsbGxra2tra2tsbGzKmJSYAAAAD3RSTlMAQw0aW4c2vq2YechqK+kA+co8AAAAd0lEQVQI12NgYGDyKGeAAr8pggwMCiAWZxOQgLA9GGCAsQhCMzEwaCdAxQwYXGHSRgwTYUxlhk0wJhvDBgSzAG4UQxOCGQZjmjHIwJjJDJoGUKYAA2MAVOkFBgYviLAgiBsMYrFcAJGpzgwMhmchzpMKXXUQ6HIArngPcG/qBmMAAAAASUVORK5CYII=')
+  opacity: 1
+  animation: rotating 0.65s linear infinite
+
+.transition-active
+  transition: color $default-transition-duration $default-transition-function, background $default-transition-duration $default-transition-function, border-color $default-transition-duration $default-transition-function, opacity $default-transition-duration $default-transition-function
+
+.transition-hover
+  transition: none
+
+.force3D
+  transform: translate3d(0, 0, 0)
+  backface-visibility: hidden
+
+%overflow-y
+  overflow: hidden
+  overflow-x: hidden
+  overflow-y: auto
+  -webkit-overflow-scrolling: touch

@@ -1,0 +1,33 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions", "not dead"]
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    ["@babel/plugin-proposal-class-properties"],
+    [
+      "@babel/plugin-proposal-object-rest-spread",
+      {
+        "useBuiltIns": true
+      }
+    ],
+    [
+      "module-resolver",
+      {
+        "root": ["./src/assets/js"],
+        "alias": {
+          "classes": "./src/assets/js/classes",
+          "helpers": "./src/assets/js/helpers",
+          "modules": "./src/assets/js/modules",
+          "utils": "./src/assets/js/utils"
+        }
+      }
+    ]
+  ]
+}

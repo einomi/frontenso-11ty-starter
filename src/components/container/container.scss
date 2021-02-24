@@ -1,0 +1,22 @@
+.container {
+  width: 100%;
+  max-width: #{$container-width + $offset-side * 2};
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $offset-side;
+  padding-right: $offset-side;
+
+  &._relative {
+    position: relative;
+  }
+
+  @include mq-tablet {
+    padding-left: $offset-side-md;
+    padding-right: $offset-side-md;
+  }
+
+  @include mq-mobile {
+    padding-left: $offset-side-sm;
+    padding-right: $offset-side-sm;
+  }
+}

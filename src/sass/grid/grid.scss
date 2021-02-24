@@ -1,0 +1,52 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: (
+    $breakpoint-sm - 1,
+  ),
+  md: (
+    $breakpoint-md - 1,
+  ),
+  lg: (
+    $breakpoint-lg - 1,
+  ),
+) !default;
+
+$container-max-widths: (
+  xs: $container-max-width-xs,
+  sm: $container-max-width-sm,
+  md: $container-max-width-md,
+  lg: $container-max-width-lg,
+) !default;
+
+$grid-columns: $cols-total !default;
+
+$grid-gutter-widths: (
+  xs: $indent-col-xs,
+  sm: $indent-col-sm,
+  md: $indent-col-md,
+  lg: $indent-col-lg,
+) !default;
+
+.skin {
+  @include make-container();
+  @include make-container-max-widths();
+}
+
+.skin-fluid {
+  @include make-container();
+}
+
+// Generate grid classes
+@include make-grid-classes();
+
+// Generate 10-columns grid
+@include make-grid-classes(
+  10,
+  $grid-gutter-widths,
+  $grid-breakpoints,
+  grid,
+  col-of10
+);
+
+// Generate visibility classes
+@include make-visibility-classes();

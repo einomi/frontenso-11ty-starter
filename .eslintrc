@@ -1,0 +1,19 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "commonjs": true
+  },
+  "extends": ["eslint:recommended"],
+  "globals": {
+    "cy": true
+  },
+  "rules": {
+    "no-class-assign": "off",
+    "import/no-named-as-default": "off",
+    "no-console": "off",
+    "no-unused-vars": "warn"
+  },
+  "plugins": []
+}

@@ -1,0 +1,11 @@
+@function percents($value, $context: $container-width) {
+  @return $value / $context * 100%;
+}
+
+@function em($value, $context) {
+  @return $value / $context + em;
+}
+
+@function vw($value, $context: $mockup-width) {
+  @return $value / $context * 100 + vw;
+}

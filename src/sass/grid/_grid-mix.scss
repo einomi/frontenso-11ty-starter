@@ -1,0 +1,240 @@
+@mixin make-gutters($gutters: $grid-gutter-widths) {
+  @each $breakpoint in map-keys($gutters) {
+    @include breakpoint-up($breakpoint) {
+      $gutter: map-get($gutters, $breakpoint);
+      padding-right: ($gutter / 2);
+      padding-left: ($gutter / 2);
+    }
+  }
+}
+
+@mixin make-container($gutters: $grid-gutter-widths) {
+  margin-left: auto;
+  margin-right: auto;
+  @include make-gutters($gutters);
+}
+
+@mixin make-container-max-widths(
+  $max-widths: $container-max-widths,
+  $breakpoints: $grid-breakpoints
+) {
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include breakpoint-up($breakpoint, $breakpoints) {
+      max-width: $container-max-width;
+      width: 100%;
+    }
+  }
+}
+
+@mixin make-grid(
+  $gutters: $grid-gutter-widths,
+  $breakpoints: $grid-breakpoints,
+  $col_class: col
+) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  @each $breakpoint in map-keys($gutters) {
+    @include breakpoint-up($breakpoint) {
+      $gutter: map-get($gutters, $breakpoint);
+      margin-right: ($gutter / -2);
+      margin-left: ($gutter / -2);
+    }
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $suffix-: breakpoint-suffix($breakpoint, $breakpoints, '', '-');
+    $gutter: map-get($gutters, $breakpoint);
+
+    @include breakpoint-up($breakpoint) {
+      &_#{$suffix-}reverse {
+        flex-direction: row-reverse !important;
+      }
+
+      &_#{$suffix-}nowrap {
+        flex-wrap: nowrap !important;
+      }
+
+      &_#{$suffix-}wrap {
+        flex-wrap: wrap !important;
+      }
+
+      &_#{$suffix-}start {
+        justify-content: flex-start;
+      }
+
+      &_#{$suffix-}center {
+        justify-content: center;
+      }
+
+      &_#{$suffix-}end {
+        justify-content: flex-end;
+      }
+
+      &_#{$suffix-}beetwen {
+        justify-content: space-between;
+      }
+
+      &_#{$suffix-}around {
+        justify-content: space-around;
+      }
+
+      &_#{$suffix-}top {
+        align-items: flex-start;
+      }
+
+      &_#{$suffix-}middle {
+        align-items: center;
+      }
+
+      &_#{$suffix-}bottom {
+        align-items: flex-end;
+      }
+
+      &_#{$suffix-}feed {
+        > .#{$col_class} {
+          margin-bottom: $gutter;
+        }
+      }
+
+      &_#{$suffix-}feed-offset {
+        margin-bottom: -$gutter;
+      }
+
+      &_#{$suffix-}gapless {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        > .#{$col_class} {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+      }
+    }
+  }
+}
+
+@mixin make-col($gutters: $grid-gutter-widths) {
+  position: relative;
+  min-height: 1px;
+  flex: 0 1 auto;
+  max-width: 100%;
+  @include make-gutters($gutters);
+}
+
+@mixin make-col-size($size, $columns: $grid-columns) {
+  flex: 0 0 percentage($size / $columns);
+  max-width: percentage($size / $columns);
+}
+
+@mixin make-col-auto() {
+  flex: 0 1 auto;
+}
+
+@mixin make-col-grow() {
+  flex: 1 1 0%;
+  min-width: 0;
+  // http://stackoverflow.com/questions/36247140/why-doesnt-flex-item-shrink-past-content-size/36247448#36247448
+  width: auto;
+}
+
+@mixin make-col-offset($size, $columns: $grid-columns) {
+  margin-left: percentage($size / $columns);
+}
+
+@mixin make-col-push($size, $columns: $grid-columns) {
+  left: if($size > 0, percentage($size / $columns), auto);
+}
+
+@mixin make-col-pull($size, $columns: $grid-columns) {
+  right: if($size > 0, percentage($size / $columns), auto);
+}
+
+@mixin make-col-modifier($type, $size, $columns) {
+  @if $type == push {
+    @include make-col-push($size, $columns);
+  } @else if $type == pull {
+    @include make-col-pull($size, $columns);
+  } @else if $type == offset {
+    @include make-col-offset($size, $columns);
+  }
+}
+
+@mixin make-grid-classes(
+  $columns: $grid-columns,
+  $gutters: $grid-gutter-widths,
+  $breakpoints: $grid-breakpoints,
+  $grid-class: grid,
+  $col_class: col
+) {
+  .#{$grid-class} {
+    @include make-grid($gutters, $breakpoints, $col_class);
+  }
+
+  .#{$col_class} {
+    @include make-col($gutters);
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $_suffix: breakpoint-suffix($breakpoint, $breakpoints, '_');
+    $suffix-: breakpoint-suffix($breakpoint, $breakpoints, '', '-');
+    $_suffix-: breakpoint-suffix($breakpoint, $breakpoints, '_', '-');
+
+    @include breakpoint-up($breakpoint, $breakpoints) {
+      @for $i from 1 through $columns {
+        .#{$col_class}_#{$suffix-}#{$i} {
+          @include make-col-size($i, $columns);
+        }
+      }
+      .#{$col_class}_#{$suffix-}auto {
+        @include make-col-auto();
+      }
+
+      .#{$col_class}_#{$suffix-}grow {
+        @include make-col-grow();
+      }
+
+      .#{$col_class}_#{$suffix-}self-end {
+        align-self: flex-end;
+      }
+
+      .#{$col_class}_#{$suffix-}self-start {
+        align-self: flex-start;
+      }
+
+      .#{$col_class}_#{$suffix-}self-center {
+        align-self: center;
+      }
+
+      .#{$col_class}_#{$suffix-}self-stretch {
+        align-self: stretch;
+      }
+
+      .#{$col_class}_#{$suffix-}filled {
+        display: flex;
+        flex-direction: column;
+
+        > * {
+          flex: 1 0 auto;
+        }
+      }
+
+      @each $modifier in (pull, push) {
+        @for $i from 0 through $columns {
+          .#{$col_class}_#{$suffix-}#{$modifier}-#{$i} {
+            @include make-col-modifier($modifier, $i, $columns);
+          }
+        }
+      }
+
+      @for $i from 0 through ($columns - 1) {
+        @if not($suffix- == '' and $i == 0) {
+          .#{$col_class}_#{$suffix-}offset-#{$i} {
+            @include make-col-modifier(offset, $i, $columns);
+          }
+        }
+      }
+    }
+  }
+}
