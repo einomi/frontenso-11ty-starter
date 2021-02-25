@@ -4,7 +4,11 @@ module.exports = {
       center: true,
       padding: '30px',
     },
-    extend: {},
+    extend: {
+      spacing: {
+        '0.75': '0.19rem'
+      }
+    },
   },
   variants: {
     extend: {},
