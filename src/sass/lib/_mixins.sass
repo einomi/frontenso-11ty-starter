@@ -36,7 +36,7 @@
 	overflow: hidden
 	text-overflow: ellipsis
 	white-space: nowrap
-	
+
 =letterSpacing($interval)
 	letter-spacing: unquote(($interval / 1000) + 'em')
 
@@ -186,7 +186,7 @@
 			vertical-align: middle
 			height: 100%
 			width: 0
-	
+
 =loading
 	@at-root html._loading #{&}
 		@content
@@ -198,23 +198,23 @@
 =windows
 	@at-root html._win #{&}
 		@content
-	
+
 =desktop
 	@at-root html._desktop #{&}
 		@content
-	
+
 =mobile
 	@at-root html._mobile #{&}
 		@content
-	
+
 =tablet
 	@at-root html._tablet #{&}
 		@content
-	
+
 =phone
 	@at-root html._phone #{&}
 		@content
-  
+
 =animated
 	@extend .transition-active
 	&:hover
@@ -227,9 +227,6 @@
   -webkit-appearance: none
   text-decoration: none
   user-select: none
-  
-  &:focus
-    outline: none
 
 =hover-default
   @include animated
@@ -237,7 +234,7 @@
     opacity: 0.8
   &:active
     opacity: 0.6
-  
+
 =input-reset
   border: none
   border-radius: 0
