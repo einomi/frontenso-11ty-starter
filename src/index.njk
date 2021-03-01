@@ -16,11 +16,13 @@
       {% include "./components/some-component/some-component.njk" %}
       <section style="margin-top: 60px;">
         <h3 style="margin-bottom: 20px;">Image example</h3>
-        {% image "./src/assets/images/woman.jpg", {alt: "Woman"} %}
+        {# not passing maxWidth here #}
+        {% image "./src/assets/images/woman.jpg", {alt: "Woman", class: 'example-image'} %}
       </section>
       <section style="margin-top: 60px;">
         <h3 style="margin-bottom: 20px;">Remote image example</h3>
-        {% image "https://hddesktopwallpapers.in/wp-content/uploads/2015/09/butterfly-live-wallpaper-download.jpg", {alt: "Butterfly"}, 550 %}
+        {# passing maxWidth = 550px here #}
+        {% image "https://hddesktopwallpapers.in/wp-content/uploads/2015/09/butterfly-live-wallpaper-download.jpg", {alt: "Butterfly", class: 'example-image'}, 550 %}
       </section>
       <section style="margin-top: 60px;">
         <h3 style="margin-bottom: 20px;">An image inlined in the CSS example (compress such images manually!)</h3>
