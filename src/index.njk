@@ -16,10 +16,14 @@
       {% include "./components/some-component/some-component.njk" %}
       <section style="margin-top: 60px;">
         <h3 style="margin-bottom: 20px;">Image example</h3>
-        <img src="/assets/images/woman.jpg" alt="Woman">
+        {% image "./src/assets/images/woman.jpg", {alt: "Woman"} %}
       </section>
       <section style="margin-top: 60px;">
-        <h3 style="margin-bottom: 20px;">Inline image example</h3>
+        <h3 style="margin-bottom: 20px;">Remote image example</h3>
+        {% image "https://hddesktopwallpapers.in/wp-content/uploads/2015/09/butterfly-live-wallpaper-download.jpg", {alt: "Butterfly"}, 550 %}
+      </section>
+      <section style="margin-top: 60px;">
+        <h3 style="margin-bottom: 20px;">An image inlined in the CSS example (compress such images manually!)</h3>
         <div class="page-home__inline-image-example"></div>
       </section>
       <section style="margin-top: 60px;">

@@ -14,8 +14,6 @@ module.exports = {
   },
   watch: {
     styles: 'src/**/*.{sass,scss}',
-    images: 'src/assets/images/**/*.*',
-    sprites: 'src/assets/images/sprites/*.png',
     svg: 'src/assets/svg/**/*.svg',
   },
 };

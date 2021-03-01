@@ -28,6 +28,8 @@
   "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy-cache-assets": "^2.1.0",
+    "@11ty/eleventy-img": "^0.8.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
     "@babel/core": "^7.13.1",
     "@babel/plugin-proposal-class-properties": "^7.13.0",
@@ -55,6 +57,7 @@
     "gulp-svgstore": "^7.0.1",
     "gulp-watch": "^5.0.1",
     "gulp-zip": "^5.0.2",
+    "image-size": "^0.9.4",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-pngquant": "^9.0.1",
     "node-notifier": "^9.0.0",
