@@ -1,5 +1,6 @@
 module.exports = {
   build: {
+    root: 'dist/',
     styles: 'dist/css/',
     images: 'dist/images/',
     sprites: 'dist/images/sprites/',

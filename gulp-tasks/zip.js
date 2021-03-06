@@ -5,7 +5,7 @@ const PATHS = require('../paths');
 
 module.exports = function zipArchive() {
   return gulp
-    .src(PATHS.build.html + '/**/*')
-    .pipe(gulpZip(`${PATHS.build.html}.zip`))
+    .src(PATHS.build.root + '/**/*')
+    .pipe(gulpZip(`${PATHS.build.root.replace('/', '')}.zip`))
     .pipe(gulp.dest('./'));
 };
