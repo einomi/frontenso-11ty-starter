@@ -20,8 +20,8 @@ async function imageShortcode(src, attributes = {}, maxWidth = 2636) {
   const options = {
     widths: [...widths.filter((v) => maxWidth - v >= 200), maxWidth],
     formats: ['avif', 'webp', 'jpeg'],
-    urlPath: '/assets/images/',
-    outputDir: './dist/assets/images/',
+    urlPath: '/images/',
+    outputDir: './dist/images/',
   };
 
   const metadata = await Image(src, options);
@@ -33,9 +33,7 @@ async function imageShortcode(src, attributes = {}, maxWidth = 2636) {
     return acc;
   }, 0);
 
-  console.log('metadata', metadata);
-
-  let imageAttributes = {
+  const imageAttributes = {
     sizes: `(max-width: ${maxWidthReal}px) 100vw, ${maxWidthReal}px`,
     alt: '',
     loading: 'lazy',

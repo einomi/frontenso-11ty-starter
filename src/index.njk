@@ -14,28 +14,28 @@
         chevronRight: true
       }) }}
       {% include "./components/some-component/some-component.njk" %}
-      <section style="margin-top: 60px;">
-        <h3 style="margin-bottom: 20px;">Image example</h3>
+      <section class="max-w-xl mt-14">
+        <h3 class="mb-6">Image example</h3>
         {# not passing maxWidth here #}
-        {% image "./src/assets/images/woman.jpg", {alt: "Woman", class: 'example-image'} %}
+        {% image "./src/images/jim-cat.jpg", {alt: "Cat", class: 'example-image block max-w-full h-auto'} %}
       </section>
-      <section style="margin-top: 60px;">
-        <h3 style="margin-bottom: 20px;">Remote image example</h3>
+      <section class="mt-14">
+        <h3 class="mb-6">Remote image example</h3>
         {# passing maxWidth = 550px here #}
         {% image "https://hddesktopwallpapers.in/wp-content/uploads/2015/09/butterfly-live-wallpaper-download.jpg", {alt: "Butterfly", class: 'example-image'}, 550 %}
       </section>
-      <section style="margin-top: 60px;">
-        <h3 style="margin-bottom: 20px;">An image inlined in the CSS example (compress such images manually!)</h3>
+      <section class="mt-14">
+        <h3 class="mb-6">An image inlined in the CSS example (compress such images manually!)</h3>
         <div class="page-home__inline-image-example"></div>
       </section>
-      <section style="margin-top: 60px;">
-        <h3 style="margin-bottom: 20px;">Vector image example (using SVG sprite)</h3>
-        <svg style="fill: #111; width: 80px; height: 80px;">
+      <section class="mt-14">
+        <h3 class="mb-6">Vector image example (using SVG sprite)</h3>
+        <svg class="text-black fill-current w-20 h-20">
           <use xlink:href="#icon-logo-example"></use>
         </svg>
       </section>
-      <section>
-        <div class="mt-8 px-4 py-4 rounded w-64 shadow shadow-md">
+      <section class="mt-14">
+        <div class="px-4 py-4 rounded w-64 shadow shadow-md">
           <h3 class="bold mb-4 text-blue-600 hover-default">Tailwind example</h3>
           <div class="flex">
             <svg class="relative top-0.75 mr-2 w-5 h-5">

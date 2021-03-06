@@ -27,7 +27,7 @@ const POSTCSS_PROCESSORS = [
 
   sprites({
     stylesheetPath: './dist/css/',
-    spritePath: './dist/assets/images/',
+    spritePath: './dist/images/',
     retina: true,
     padding: 4,
     filterBy: (image) =>

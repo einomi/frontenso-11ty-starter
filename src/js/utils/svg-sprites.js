@@ -11,6 +11,6 @@
     }
     script.parentNode.insertBefore(div, script);
   };
-  xhr.open('get', 'assets/svg/sprite.svg', true);
+  xhr.open('get', 'svg/sprite.svg', true);
   xhr.send();
 })(document);

@@ -1,19 +1,19 @@
 module.exports = {
   build: {
     styles: 'dist/css/',
-    images: 'dist/assets/images/',
-    sprites: 'dist/assets/images/sprites/',
-    svg: 'dist/assets/svg/',
+    images: 'dist/images/',
+    sprites: 'dist/images/sprites/',
+    svg: 'dist/svg/',
   },
   src: {
     styles: 'src/sass/styles.scss',
-    images: 'src/assets/images/**/*.*',
-    imagesInline: 'src/assets/images/inline/',
-    sprites: 'src/assets/images/sprites/*.png',
-    svg: 'src/assets/svg/**/*.svg',
+    images: 'src/images/**/*.*',
+    imagesInline: 'src/images/inline/',
+    sprites: 'src/images/sprites/*.png',
+    svg: 'src/svg/**/*.svg',
   },
   watch: {
     styles: 'src/**/*.{sass,scss}',
-    svg: 'src/assets/svg/**/*.svg',
+    svg: 'src/svg/**/*.svg',
   },
 };

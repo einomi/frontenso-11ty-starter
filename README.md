@@ -100,11 +100,11 @@ For retina images, you can use the `sr` mixin. Please, keep in mind that you nee
 +sr('some-image')
 ```
 
-The images should be kept inside the `src/assets/images/sprites` in `png` format.
+The images should be kept inside the `src/images/sprites` in `png` format.
 
 ## Inlining raster or svg images into HTML
 
-<b>Attention!</b> The files, which should be inlined, have to seat in the `src/assets/images/inline` directory.
+<b>Attention!</b> The files, which should be inlined, have to seat in the `src/images/inline` directory.
 
 ### Inlining raster or svg images in CSS
 
