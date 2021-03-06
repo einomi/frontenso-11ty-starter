@@ -5,6 +5,7 @@ module.exports = {
     images: 'dist/images/',
     sprites: 'dist/images/sprites/',
     svg: 'dist/svg/',
+    html: 'dist/**/*.html',
   },
   src: {
     styles: 'src/sass/styles.scss',

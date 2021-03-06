@@ -8,20 +8,23 @@
     "dev:gulp": "gulp&",
     "dev:eleventy": "eleventy --serve --port=9000",
     "dev:webpack": "webpack --watch",
-    "build": "cross-env NODE_ENV=production npm-run-all clean -p build:*",
+    "build": "cross-env NODE_ENV=production npm-run-all clean -p build:* && npm run beautify-html",
     "build:gulp": "gulp production",
     "build:eleventy": "eleventy",
     "build:webpack": "webpack",
     "clean": "rimraf dist/",
     "zip": "cross-env NODE_ENV=production gulp zip",
     "format": "pretty-quick --staged",
-    "lint:css": "stylelint \"src/**/*.{scss,sass}\"",
-    "lint:js": "eslint --max-warnings 0 \"src/**/*.{jsx,js}\"",
-    "validate": "npm-run-all --parallel format lint:css lint:js"
+    "validate:css": "stylelint \"src/**/*.{scss,sass}\"",
+    "validate:js": "eslint --max-warnings 0 \"src/**/*.{jsx,js}\"",
+    "validate:html": "gulp w3c-validator",
+    "pre-commit": "npm-run-all --parallel format validate:*",
+    "beautify-html": "js-beautify dist/**/*.html --indent-size 2 --wrap-line-length 0 --max-preserve-newlines 1",
+    "validate": "npm-run-all --parallel validate:*"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run validate"
+      "pre-commit": "npm run pre-commit"
     }
   },
   "author": "einomi",
@@ -48,6 +51,7 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-if": "^3.0.0",
     "gulp-imagemin": "^7.1.0",
+    "gulp-jsbeautifier": "^3.0.1",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.0",
     "gulp-rename": "^2.0.0",
@@ -55,11 +59,13 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-svgmin": "^3.0.0",
     "gulp-svgstore": "^7.0.1",
+    "gulp-w3c-html-validator": "^2.0.1",
     "gulp-watch": "^5.0.1",
     "gulp-zip": "^5.0.2",
     "image-size": "^0.9.4",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-pngquant": "^9.0.1",
+    "js-beautify": "^1.13.5",
     "node-notifier": "^9.0.0",
     "node-sass": "^5.0.0",
     "npm-run-all": "^4.1.5",
@@ -70,6 +76,7 @@
     "stylelint": "^13.11.0",
     "stylelint-config-recommended": "^3.0.0",
     "tailwindcss": "^2.0.3",
+    "through2": "^4.0.2",
     "webpack": "^5.24.1",
     "webpack-cli": "^4.5.0"
   },

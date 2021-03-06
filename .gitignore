@@ -71,6 +71,7 @@ yarn-error.log
 # misc
 .idea
 .fuse_hidden*
+*.zip
 
 package-lock.json
 
