@@ -6,6 +6,10 @@
     "property-no-vendor-prefix": null,
     "at-rule-no-unknown": null,
     "no-descending-specificity": null,
-    "no-empty-source": null
+    "no-empty-source": null,
+    "rule-empty-line-before": [
+      "always-multi-line",
+      { "except": ["first-nested"] }
+    ]
   }
 }
