@@ -1003,10 +1003,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@frontenso/eslint-config-javascript@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@frontenso/eslint-config-javascript/-/eslint-config-javascript-0.1.2.tgz#5ae74bace44a40180b3bfa6a61d109d5446236d3"
-  integrity sha512-Ea7W9ve1qDPPQikItpy2bGGhhe+JvygMoV8LtITkpWpWIa7ggks/f92fbNWDZQcNp1Zes93xSRuBzp1KxTbyog==
+"@frontenso/eslint-config-javascript@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@frontenso/eslint-config-javascript/-/eslint-config-javascript-0.1.3.tgz#28cb6f9a1e7656b618976247c100b4c58ef3e19d"
+  integrity sha512-+nWmhLRE7I8528e9G1KejlKAEFlRWFoOFuHGvHqohbXI5JidwJePk4TPD3wwn5viqaLknK3SLDZY3NBdOHEOyw==
 
 "@fullhuman/postcss-purgecss@^3.1.3":
   version "3.1.3"
