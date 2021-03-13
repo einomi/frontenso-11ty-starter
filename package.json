@@ -15,12 +15,12 @@
     "clean": "rimraf dist/",
     "zip": "cross-env NODE_ENV=production gulp zip",
     "format": "pretty-quick --staged",
-    "validate:css": "stylelint \"src/**/*.{scss,sass}\"",
-    "validate:js": "eslint --max-warnings 0 \"src/**/*.{jsx,js}\"",
-    "validate:html": "gulp w3c-validator",
-    "pre-commit": "npm-run-all --parallel format validate:*",
+    "lint:css": "stylelint \"src/**/*.{scss,sass}\"",
+    "lint:js": "eslint --max-warnings 0 \"src/**/*.{jsx,js}\"",
+    "lint:html": "gulp w3c-validator",
+    "pre-commit": "npm-run-all --parallel format lint:*",
     "beautify-html": "prettier --write  dist/**/*.html",
-    "validate": "npm-run-all --parallel validate:*"
+    "validate:ci": "npm-run-all --parallel lint:*"
   },
   "husky": {
     "hooks": {
@@ -38,6 +38,7 @@
     "@babel/plugin-proposal-class-properties": "^7.13.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.13.0",
     "@babel/preset-env": "^7.13.5",
+    "@frontenso/eslint-config-javascript": "^0.1.2",
     "@fullhuman/postcss-purgecss": "^4.0.2",
     "ansi-colors": "^4.1.1",
     "autoprefixer": "10.2.4",
@@ -46,6 +47,9 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "cross-env": "^7.0.3",
     "eslint": "^7.20.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-unicorn": "^28.0.2",
     "fancy-log": "^1.3.3",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",

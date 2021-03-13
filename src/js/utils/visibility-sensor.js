@@ -21,8 +21,8 @@ class VisibilitySensor {
    */
   update = (entries) => {
     entries.forEach((entry) => {
-      const cb = this.added.find((v) => {
-        return v.node === entry.target;
+      const cb = this.added.find((val) => {
+        return val.node === entry.target;
       })?.cb;
       cb && cb({ isVisible: entry.isIntersecting });
     });
@@ -43,7 +43,7 @@ class VisibilitySensor {
   unobserve(node) {
     this.observer.unobserve(node);
     node.querySelector('.cad');
-    this.added = this.added.filter((v) => v.node !== node);
+    this.added = this.added.filter((val) => val.node !== node);
   }
 }
 
