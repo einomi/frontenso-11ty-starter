@@ -3,7 +3,7 @@
     "stylelint-config-recommended"
   ],
   "rules" : {
-    "property-no-vendor-prefix": null,
+    "property-no-vendor-prefix": true,
     "at-rule-no-unknown": null,
     "no-descending-specificity": null,
     "no-empty-source": null,
