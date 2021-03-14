@@ -1,0 +1,10 @@
+@mixin s($name) {
+  background: url('../images/sprites/' + $name + '.png') 0 0 no-repeat;
+}
+
+@mixin sr($name) {
+  @include s($name);
+  @include retina {
+    background: url('../images/sprites/' + $name + '@2x.png') 0 0 no-repeat;
+  }
+}
