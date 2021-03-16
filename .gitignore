@@ -54,10 +54,6 @@ typings/
 # dotenv environment variables file
 .env*
 
-# gatsby files
-.cache/
-public
-
 # Mac files
 .DS_Store
 
@@ -79,5 +75,6 @@ package-lock.json
 .netlify
 functions/*.zip
 
-# eleventy.js build output
+# eleventy.js
+.cache/
 dist
