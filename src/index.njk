@@ -14,19 +14,21 @@
         chevronRight: true
       }) }}
       {% include "./components/some-component/some-component.njk" %}
-      <section class="max-w-xs mt-14">
-        <h3 class="mb-6">Image example</h3>
+      <section class="mt-14">
+        <h3 class="mb-6">Image example (AVIF and WebP are generated)</h3>
         {# not passing maxWidth here #}
-        {% image "./src/images/cat.jpg", {alt: "Cat", class: 'example-image block max-w-full h-auto'} %}
+        <div class="max-w-xs">
+          {% image "./src/images/cat.jpg", {alt: "Cat", class: 'example-image block max-w-full h-auto'} %}
+        </div>
       </section>
       <section class="mt-14">
-        <h3 class="mb-6">Remote image example</h3>
+        <h3 class="mb-6">Remote image example (AVIF and WebP are generated)</h3>
         {# passing maxWidth = 550px here #}
         {% image "https://hddesktopwallpapers.in/wp-content/uploads/2015/09/butterfly-live-wallpaper-download.jpg", {alt: "Butterfly", class: 'example-image'}, 500 %}
       </section>
       <section class="mt-14">
         <h3 class="mb-1">An image inlined in the CSS example (compress such images manually!)</h3>
-        <h4 class="max-w-xl text-lg text-red-600 mb-6 font-bold tracking-wide uppercase">Attention! Use this feature with caution as it bloats the final css file!</h4>
+        <h4 class="max-w-xl text-lg text-red-600 mb-6 font-bold tracking-wide uppercase">Attention! Please use this feature with caution as it may bloat the final css file!</h4>
         <div class="page-home__inline-image-example"></div>
       </section>
       <section class="mt-14">
