@@ -12,6 +12,8 @@
   &__inline-image-example {
     width: 150px;
     height: 116px;
+    border-bottom: 1px solid white;
     background-image: inline('../images/rubber-duck.png');
+    color: #000;
   }
 }

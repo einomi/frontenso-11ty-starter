@@ -5,9 +5,9 @@
 
 @mixin button-reset {
   border: none;
+  appearance: none;
   background-color: transparent;
   border-radius: 0;
-  appearance: none;
   text-decoration: none;
   user-select: none;
 }
@@ -26,9 +26,9 @@
 
 @mixin input-reset {
   border: none;
-  border-radius: 0;
   appearance: none;
   background-color: transparent;
+  border-radius: 0;
 }
 
 @mixin retina {

@@ -1,9 +1,9 @@
 @mixin button-reset {
   border: none;
+  appearance: none;
   background-color: transparent;
   border-radius: 0;
-  appearance: none;
+  cursor: pointer;
   text-decoration: none;
   user-select: none;
-  cursor: pointer;
 }

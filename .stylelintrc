@@ -1,15 +1,23 @@
 {
   "extends": [
-    "stylelint-config-recommended"
+    "stylelint-config-recommended-scss",
+    "stylelint-config-idiomatic-order"
   ],
-  "rules" : {
+  "rules": {
     "property-no-vendor-prefix": true,
     "at-rule-no-unknown": null,
     "no-descending-specificity": null,
     "no-empty-source": null,
     "rule-empty-line-before": [
       "always-multi-line",
-      { "except": ["first-nested"] }
+      {
+        "except": [
+          "first-nested"
+        ]
+      }
     ]
-  }
+  },
+  "plugins": [
+    "stylelint-order"
+  ]
 }

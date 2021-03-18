@@ -9,8 +9,8 @@
 }
 
 @mixin make-container($gutters: $grid-gutter-widths) {
-  margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
   @include make-gutters($gutters);
 }
 
@@ -20,8 +20,8 @@
 ) {
   @each $breakpoint, $container-max-width in $max-widths {
     @include breakpoint-up($breakpoint, $breakpoints) {
-      max-width: $container-max-width;
       width: 100%;
+      max-width: $container-max-width;
     }
   }
 }
@@ -103,12 +103,12 @@
       }
 
       &_#{$suffix-}gapless {
-        margin-left: 0 !important;
         margin-right: 0 !important;
+        margin-left: 0 !important;
 
         > .#{$col_class} {
-          padding-left: 0 !important;
           padding-right: 0 !important;
+          padding-left: 0 !important;
         }
       }
     }
@@ -117,15 +117,15 @@
 
 @mixin make-col($gutters: $grid-gutter-widths) {
   position: relative;
+  max-width: 100%;
   min-height: 1px;
   flex: 0 1 auto;
-  max-width: 100%;
   @include make-gutters($gutters);
 }
 
 @mixin make-col-size($size, $columns: $grid-columns) {
-  flex: 0 0 percentage($size / $columns);
   max-width: percentage($size / $columns);
+  flex: 0 0 percentage($size / $columns);
 }
 
 @mixin make-col-auto() {
@@ -133,10 +133,10 @@
 }
 
 @mixin make-col-grow() {
-  flex: 1 1 0%;
-  min-width: 0;
   // http://stackoverflow.com/questions/36247140/why-doesnt-flex-item-shrink-past-content-size/36247448#36247448
   width: auto;
+  min-width: 0;
+  flex: 1 1 0%;
 }
 
 @mixin make-col-offset($size, $columns: $grid-columns) {
