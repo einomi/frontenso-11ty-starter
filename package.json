@@ -18,7 +18,7 @@
     "lint:css": "stylelint --fix \"src/**/*.{scss,sass}\"",
     "lint:js": "eslint --max-warnings 0 \"src/**/*.{jsx,js}\"",
     "lint:html": "gulp w3c-validator",
-    "pre-commit": "npm-run-all --parallel format lint:*",
+    "pre-commit": "npm-run-all format --parallel lint:*",
     "beautify-html": "prettier --write  dist/**/*.html",
     "validate:ci": "npm-run-all --parallel lint:*"
   },
