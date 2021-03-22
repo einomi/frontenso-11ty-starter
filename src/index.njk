@@ -7,7 +7,7 @@
 {% block content %}
   <div class="page-home page">
     <div class="container">
-      <h1 class="page-home__title title">frōntensō-11ty-starter</h1>
+      <h1 class="page-home__title title font-semibold">frōntensō-11ty-starter</h1>
       {{ button({
         className: 'page-home__button',
         children: 'Buy something',
@@ -15,24 +15,24 @@
       }) }}
       {% include "./components/some-component/some-component.njk" %}
       <section class="mt-14">
-        <h3 class="mb-6">Image example (AVIF and WebP are generated)</h3>
+        <h3 class="text-lg font-semibold mb-5">Image example (AVIF and WebP are generated)</h3>
         {# not passing maxWidth here #}
         <div class="max-w-xs">
           {% image "./src/images/cat.jpg", {alt: "Cat", class: 'example-image block max-w-full h-auto'} %}
         </div>
       </section>
       <section class="mt-14">
-        <h3 class="mb-6">Remote image example (AVIF and WebP are generated)</h3>
+        <h3 class="text-lg font-semibold mb-5">Remote image example (AVIF and WebP are generated)</h3>
         {# passing maxWidth = 500px here #}
         {% image "https://hddesktopwallpapers.in/wp-content/uploads/2015/09/butterfly-live-wallpaper-download.jpg", {alt: "Butterfly", class: 'example-image'}, 500 %}
       </section>
       <section class="mt-14">
-        <h3 class="mb-1">An image inlined in the CSS example (compress such images manually!)</h3>
+        <h3 class="text-lg font-semibold mb-1">An image inlined in the CSS example (compress such images manually!)</h3>
         <h4 class="max-w-xl text-lg text-red-600 mb-6 font-bold tracking-wide uppercase">Attention! Please use this feature with caution as it may bloat the final css file!</h4>
         <div class="page-home__inline-image-example"></div>
       </section>
       <section class="mt-14">
-        <h3 class="mb-6">Vector image example (using SVG sprite)</h3>
+        <h3 class="text-lg font-semibold mb-5">Vector image example (using SVG sprite)</h3>
         <svg class="text-black fill-current w-20 h-20">
           <use xlink:href="#icon-logo-example"></use>
         </svg>
@@ -42,7 +42,7 @@
         <div></div>
       </div>
       <section class="mt-14 ">
-        <h3 class="mb-5">Tailwind CSS Example</h3>
+        <h3 class="text-lg font-semibold mb-5">Tailwind CSS Example</h3>
         <div class="px-4 py-4 rounded w-64 shadow shadow-md">
           <h3 class="bold mb-4 text-blue-600 hover-default">Some section</h3>
           <div class="flex">

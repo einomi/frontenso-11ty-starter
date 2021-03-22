@@ -17,7 +17,7 @@ module.exports = {
   },
   watch: {
     styles: 'src/**/*.{sass,scss}',
-    tailwind: 'src/sass/tailwind.css',
+    tailwind: ['src/sass/tailwind.css', 'src/**/*.njk'],
     svg: 'src/svg/**/*.svg',
   },
 };

@@ -1,9 +1,7 @@
 const gulp = require('gulp');
 const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
 const cssmin = require('gulp-clean-css');
 const gulpif = require('gulp-if');
-const tailwindcss = require('tailwindcss');
 const notifier = require('node-notifier');
 const colors = require('ansi-colors');
 const plumber = require('gulp-plumber');
@@ -11,11 +9,6 @@ const log = require('fancy-log');
 
 const PATHS = require('../paths');
 const { IS_PRODUCTION } = require('../env');
-
-const POSTCSS_PROCESSORS = [
-  autoprefixer(),
-  tailwindcss('./tailwind.config.js'),
-];
 
 module.exports = function styles() {
   return gulp
@@ -31,7 +24,7 @@ module.exports = function styles() {
         },
       })
     )
-    .pipe(postcss(POSTCSS_PROCESSORS))
+    .pipe(postcss())
     .pipe(gulpif(IS_PRODUCTION, cssmin({ processImport: false })))
     .pipe(gulp.dest(PATHS.build.styles));
 };

@@ -12,14 +12,11 @@ const gulpif = require('gulp-if');
 const log = require('fancy-log');
 const colors = require('ansi-colors');
 const purgecss = require('@fullhuman/postcss-purgecss');
-const tailwindcss = require('tailwindcss');
 
 const PATHS = require('../paths');
 const { IS_PRODUCTION } = require('../env');
 
 const POSTCSS_PROCESSORS = [
-  autoprefixer(),
-
   assets({
     loadPaths: [PATHS.src.imagesInline],
     cache: true,
@@ -36,13 +33,13 @@ const POSTCSS_PROCESSORS = [
         : Promise.reject(),
   }),
 
-  tailwindcss('./tailwind.config.js'),
-
   IS_PRODUCTION &&
     purgecss({
       content: ['./dist/**/*.html'],
     }),
-].filter((v) => v);
+
+  autoprefixer(),
+].filter((value) => value);
 
 module.exports = function styles() {
   return gulp
