@@ -1,12 +1,12 @@
-// const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   mode: 'jit',
   theme: {
-    // screens: {
-    //   xs: '375px',
-    //   ...defaultTheme.screens,
-    // },
+    screens: {
+      xs: '375px',
+      ...defaultTheme.screens,
+    },
     container: {
       center: true,
       padding: '30px',
