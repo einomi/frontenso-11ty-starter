@@ -1,8 +1,8 @@
 .container {
   width: 100%;
   max-width: #{$container-width + $offset-side * 2};
-  padding-right: $offset-side;
-  padding-left: $offset-side;
+  padding-right: $offset-side-sm;
+  padding-left: $offset-side-sm;
   margin-right: auto;
   margin-left: auto;
 
@@ -10,13 +10,13 @@
     position: relative;
   }
 
-  @include mq-tablet {
+  @include media-md {
     padding-right: $offset-side-md;
     padding-left: $offset-side-md;
   }
 
-  @include mq-mobile {
-    padding-right: $offset-side-sm;
-    padding-left: $offset-side-sm;
+  @include media-lg {
+    padding-right: $offset-side;
+    padding-left: $offset-side;
   }
 }
