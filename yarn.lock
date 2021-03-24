@@ -18,10 +18,10 @@
     p-queue "^6.6.2"
     short-hash "^1.0.0"
 
-"@11ty/eleventy-img@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@11ty/eleventy-img/-/eleventy-img-0.8.0.tgz#1303cb070266bc24e9aae3b527d0e837a7a9a05c"
-  integrity sha512-ZyiZLkQnVJW1gtW6GDZpW6BpokqNWS7JsoPWm7FX7bsUxhIaCpHu069LTNvgAUuv21zjx4JMkvjR1T60M39s2g==
+"@11ty/eleventy-img@^0.8.2":
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/@11ty/eleventy-img/-/eleventy-img-0.8.2.tgz#7de80e592152ba0150163e6cca4ce5473bbb46df"
+  integrity sha512-Evb6wNfSo1H7YsN/F2ScV+02Ow2+KtT3rJ5Gn2cdQipZwvL9UAo03C9gcWQoX4OaLajQkPKcECqXx5JiVYXv5g==
   dependencies:
     "@11ty/eleventy-cache-assets" "^2.1.0"
     debug "^4.3.1"

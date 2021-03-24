@@ -2,7 +2,8 @@ const Image = require('@11ty/eleventy-img');
 const { RemoteAssetCache } = require('@11ty/eleventy-cache-assets');
 const sizeOf = require('image-size');
 
-async function imageShortcode(src, attributes = {}, maxWidth = 2636) {
+function imageShortcode(src, attributes = {}, maxWidth = 2636) {
+  console.log('src', src);
   if (typeof src != 'string') {
     throw new Error(`The path for the image is incorrect: ${src}`);
   }
@@ -24,7 +25,10 @@ async function imageShortcode(src, attributes = {}, maxWidth = 2636) {
     outputDir: './dist/images/',
   };
 
-  const metadata = await Image(src, options);
+  Image(src, options);
+
+  const metadata = Image.statsSync(src, options);
+
   const firstMetadataObj = metadata[Object.keys(metadata)[0]];
   const maxWidthReal = firstMetadataObj.reduce((acc, curr) => {
     if (curr.width > acc) {
@@ -52,7 +56,7 @@ module.exports = (config) => {
     open: false,
   });
 
-  config.addNunjucksAsyncShortcode('image', imageShortcode);
+  config.addNunjucksShortcode('image', imageShortcode);
 
   return {
     dir: {
