@@ -18,11 +18,17 @@ function imageShortcode(src, attributes = {}, maxWidth = 2636) {
 
   const widths = [295, 590, 1180, 1770, 2360];
 
+  const originalFormat = src.split('.').pop();
+
   const options = {
     widths: [...widths.filter((v) => maxWidth - v >= 200), maxWidth],
-    formats: ['avif', 'webp', 'jpeg'],
+    formats: ['avif', 'webp', originalFormat],
     urlPath: '/images/',
     outputDir: './dist/images/',
+    sharpPngOptions: {
+      compressionLevel: 9,
+      quality: 60,
+    },
   };
 
   Image(src, options);
