@@ -25,8 +25,15 @@ function imageShortcode(src, attributes = {}, maxWidth = 2636) {
     formats: ['avif', 'webp', originalFormat],
     urlPath: '/images/',
     outputDir: './dist/images/',
-    sharpPngOptions: {
-      compressionLevel: 9,
+    sharpAvifOptions: {
+      quality: 40,
+      speed: 6,
+    },
+    sharpWebpOptions: {
+      quality: 60,
+      alphaQuality: 80,
+    },
+    sharpJpegOptions: {
       quality: 60,
     },
   };
