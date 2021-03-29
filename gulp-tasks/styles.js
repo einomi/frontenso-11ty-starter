@@ -35,7 +35,7 @@ const POSTCSS_PROCESSORS = [
 
   IS_PRODUCTION &&
     purgecss({
-      content: ['./dist/**/*.html'],
+      content: ['./dist/**/*.{html,js}'],
     }),
 
   autoprefixer(),
