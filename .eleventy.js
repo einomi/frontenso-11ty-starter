@@ -2,6 +2,8 @@ const Image = require('@11ty/eleventy-img');
 const { RemoteAssetCache } = require('@11ty/eleventy-cache-assets');
 const sizeOf = require('image-size');
 
+const generateImageHTML = require('./generate-image-html');
+
 function imageShortcode(src, attributes = {}, maxWidth = 2636) {
   console.log('src', src);
   if (typeof src != 'string') {
@@ -58,7 +60,7 @@ function imageShortcode(src, attributes = {}, maxWidth = 2636) {
     ...attributes,
   };
 
-  return Image.generateHTML(metadata, imageAttributes);
+  return generateImageHTML(metadata, imageAttributes);
 }
 
 module.exports = (config) => {
