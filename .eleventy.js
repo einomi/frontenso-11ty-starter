@@ -63,15 +63,15 @@ function imageShortcode(src, attributes = {}, maxWidth = 2636) {
   return generateImageHTML(metadata, imageAttributes);
 }
 
-module.exports = (config) => {
-  config.addPassthroughCopy({ 'src/public': '/' });
+module.exports = (eleventyConfig) => {
+  eleventyConfig.addPassthroughCopy({ 'src/public': '/' });
 
-  config.setBrowserSyncConfig({
+  eleventyConfig.setBrowserSyncConfig({
     files: ['dist/**/*'],
     open: false,
   });
 
-  config.addNunjucksShortcode('image', imageShortcode);
+  eleventyConfig.addNunjucksShortcode('image', imageShortcode);
 
   return {
     dir: {

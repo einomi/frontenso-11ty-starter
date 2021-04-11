@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm-run-all clean -p dev:*",
     "dev:gulp": "gulp&",
-    "dev:eleventy": "eleventy --serve --port=9000",
+    "dev:eleventy": "node ./scripts/eleventy-dev.js",
     "dev:webpack": "webpack --watch",
     "build": "cross-env NODE_ENV=production npm-run-all clean build-webpack -p build:* && npm run beautify-html",
     "build:gulp": "gulp production",
@@ -47,6 +47,7 @@
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "babel-plugin-module-resolver": "^4.1.0",
+    "chalk": "^4.1.0",
     "cross-env": "^7.0.3",
     "eslint": "^7.20.0",
     "eslint-plugin-import": "^2.22.1",
