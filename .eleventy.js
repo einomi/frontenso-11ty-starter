@@ -66,7 +66,7 @@ function imageShortcode(src, attributes = {}, maxWidth = 2636) {
 module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({ 'src/public': '/' });
 
-  config.setBrowserSyncConfig({
+  eleventyConfig.setBrowserSyncConfig({
     files: [
       'dist/css/*.css',
       'dist/*.html',
