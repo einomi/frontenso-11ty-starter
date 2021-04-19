@@ -4,5 +4,13 @@
   "useTabs": false,
   "tabWidth": 2,
   "semi": true,
-  "trailingComma": "es5"
+  "trailingComma": "es5",
+  "overrides": [
+    {
+      "files": "*.njk",
+      "options": {
+        "parser": "melody"
+      }
+    }
+  ]
 }
