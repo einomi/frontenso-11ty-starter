@@ -12,6 +12,16 @@
   user-select: none;
 }
 
+@mixin animated {
+  transition-duration: 0.35s;
+  transition-property: opacity, color, background-color, transform;
+  transition-timing-function: ease-out;
+
+  &:hover {
+    transition: none;
+  }
+}
+
 @mixin hover-default {
   @include animated;
 
