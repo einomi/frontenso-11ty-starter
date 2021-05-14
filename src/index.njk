@@ -1,40 +1,74 @@
-{% extends "./_layouts/base.njk" %}
+{% extends './_layouts/base.njk' %}
 
-{% from "./components/button/button.njk" import button %}
+{% from './components/button/button.njk' import button %}
 
-{% block title %}frōntensō-11ty-starter{% endblock %}
+{% block title %}
+  frōntensō-11ty-starter
+{% endblock %}
 
 {% block content %}
   <div class="page-home page">
     <div class="container">
-      <h1 class="page-home__title title font-semibold">frōntensō-11ty-starter</h1>
-      {{ button({
-        className: 'page-home__button',
-        children: 'Buy something',
-        chevronRight: true
-      }) }}
-      {% include "./components/some-component/some-component.njk" %}
+      {% image './src/images/frontenso-11ty-starter.png',
+        {
+          alt: 'frōntensō-11ty-starter',
+          title: 'frōntensō-11ty-starter',
+          class: 'example-image block max-w-full h-auto mb-14'
+        },
+        280
+      %}
+
+      {{
+        button({
+          className: 'page-home__button',
+          children: 'Buy something',
+          chevronRight: true
+        })
+      }}
+      {% include './components/some-component/some-component.njk' %}
       <section class="mt-14">
-        <h3 class="text-lg font-semibold mb-5">Image example (AVIF and WebP are generated)</h3>
+        <h3 class="text-lg font-semibold mb-5">
+          Image example (AVIF and WebP are generated)
+        </h3>
         {# not passing maxWidth here #}
         <div class="max-w-xs">
-          {% image "./src/images/cat.jpg", {alt: "Cat", class: 'example-image block max-w-full h-auto'} %}
+          {% image './src/images/cat.jpg',
+            {
+              alt: 'Cat',
+              class: 'example-image block max-w-full h-auto'
+            }
+          %}
         </div>
       </section>
       <section class="mt-14">
-        <h3 class="text-lg font-semibold mb-5">Image example 2, maxWidth=500 is passed (AVIF and WebP are generated)</h3>
+        <h3 class="text-lg font-semibold mb-5">
+          Image example 2, maxWidth=500 is passed (AVIF and WebP are generated)
+        </h3>
         {# passing maxWidth=500 here #}
         <div class="max-w-xs bg-red-100">
-          {% image "./src/images/wolf.png", {alt: "Wolf", class: 'example-image block max-w-full h-auto'}, 500 %}
+          {% image './src/images/wolf.png',
+            {
+              alt: 'Wolf',
+              class: 'example-image block max-w-full h-auto'
+            },
+            500
+          %}
         </div>
       </section>
       <section class="mt-14">
-        <h3 class="text-lg font-semibold mb-1">An image inlined in the CSS example (compress such images manually!)</h3>
-        <h4 class="max-w-xl text-lg text-red-600 mb-6 font-bold tracking-wide uppercase">Attention! Please use this feature with caution as it may bloat the final css file!</h4>
+        <h3 class="text-lg font-semibold mb-1">
+          An image inlined in the CSS example (compress such images manually!)
+        </h3>
+        <h4 class="max-w-xl text-lg text-red-600 mb-6 font-bold tracking-wide uppercase">
+          Attention! Please use this feature with caution as it may bloat the
+          final css file!
+        </h4>
         <div class="page-home__inline-image-example"></div>
       </section>
       <section class="mt-14">
-        <h3 class="text-lg font-semibold mb-5">Vector image example (using SVG sprite)</h3>
+        <h3 class="text-lg font-semibold mb-5">
+          Vector image example (using SVG sprite)
+        </h3>
         <svg class="text-black fill-current w-20 h-20">
           <use xlink:href="#icon-logo-example"></use>
         </svg>
@@ -43,17 +77,25 @@
         <div></div>
         <div></div>
       </div>
-      <section class="mt-14 ">
-        <h3 class="text-lg font-semibold mb-5">Tailwind CSS Example</h3>
+      <section class="mt-14">
+        <h3 class="text-lg font-semibold mb-5">
+          Tailwind CSS Example
+        </h3>
         <div class="px-4 py-4 rounded w-64 shadow shadow-md">
-          <h3 class="bold mb-2 text-blue-600 hover-default font-bold">Some section</h3>
+          <h3 class="bold mb-2 text-blue-600 hover-default font-bold">
+            Some section
+          </h3>
           <div class="flex">
             <svg class="relative top-0.75 mr-2 w-5 h-5">
               <use xlink:href="#icon-movies"></use>
             </svg>
             <div class="text-sm">
-              <div class="line -mb-0.75">Movies</div>
-              <div class="text-gray-400">For cosy evenings</div>
+              <div class="line -mb-0.75">
+                Movies
+              </div>
+              <div class="text-gray-400">
+                For cosy evenings
+              </div>
             </div>
           </div>
         </div>
@@ -61,4 +103,3 @@
     </div>
   </div>
 {% endblock %}
-

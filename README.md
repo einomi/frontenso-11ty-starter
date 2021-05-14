@@ -1,4 +1,6 @@
-# A Starter based on 11ty and Gulp 💪
+![frontenso-eleventy-starter](./src/images/frontenso-11ty-starter.png 'Title')
+
+# Nunjucks+SCSS+TailwindCSS+ESNext starter based on 11ty and Gulp 💪
 
 ## Getting started
 
