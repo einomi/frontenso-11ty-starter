@@ -2,6 +2,8 @@
 
 # Nunjucks+SCSS+TailwindCSS+ESNext starter based on 11ty and Gulp 💪
 
+This is a production-ready starter that features Nunjucks, SASS, TailwindCSS, Webpack and ESNext. 11ty is responsible for building HTML only, the rest is built with Gulp. Can be used in conjunction with any data source either a headless CMS, JSON, markdown, or any other data source that has a JS API. Please see [11ty documentation](https://www.11ty.dev/docs/data/) on data source matter
+
 ## Getting started
 
 #### 1. Install dependencies:
@@ -72,9 +74,9 @@ You can also read [11ty documentation](https://www.11ty.dev/docs/languages/nunju
 
 Also, don't forget to add syntax highlighting for you code editor. If your editor doesn't support Nunjucks syntax, you can use syntax highlighting for Twig template engine instead. Just set up opening .njk files with Twig syntax highlighting for that.
 
-## Webpack Hot Module Replacement
+## Webpack v5
 
-HMR was removed after Webpack v5 upgrade
+This starter features Webpack v5 for building JS bundle.
 
 ## The SVG sprite
 
@@ -103,6 +105,10 @@ For retina images, you can use the `sr` mixin. Please, keep in mind that you nee
 ```
 
 The images should be kept inside the `src/images/sprites` in `png` format.
+
+## {% image %} Nunjucks tag
+
+This tag allows generating AVIF and WebP images. It also creates srcset sizes automatically based on the given max width (the 3rd argument) and widths in the `.eleventy.js` config file.
 
 ## Inlining raster or svg images into HTML
 
