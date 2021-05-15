@@ -5,7 +5,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const sprites = require('postcss-sprites');
 const assets = require('postcss-assets');
-const sass = require('gulp-sass');
+const sass = require('gulp-dart-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const cssmin = require('gulp-clean-css');
 const gulpif = require('gulp-if');
@@ -58,9 +58,7 @@ module.exports = function styles() {
     .pipe(gulpif(!IS_PRODUCTION, sourcemaps.init()))
     .pipe(
       sass({
-        outputStyle: 'compact',
         errLogToConsole: true,
-        indentedSyntax: true,
         includePaths: ['./node_modules/'],
       })
     )
