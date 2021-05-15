@@ -2,7 +2,11 @@
 
 # Nunjucks+SCSS+TailwindCSS+ESNext starter based on 11ty and Gulp 💪
 
-This is a production-ready starter that features Nunjucks, SASS, TailwindCSS, Webpack and ESNext. 11ty is responsible for building HTML only, the rest is built with Gulp. Can be used in conjunction with any data source either a headless CMS, JSON, markdown, or any other data source that has a JS API. Please see [11ty documentation](https://www.11ty.dev/docs/data/) on data source matter
+This is a production-ready starter that features Nunjucks, SASS, TailwindCSS, Webpack and ESNext.
+
+11ty is responsible for building HTML only, the rest is built with Gulp.
+
+Can be used in conjunction with any data source either a headless CMS, JSON, markdown, or any other data source that has a JS API. Please see [11ty documentation](https://www.11ty.dev/docs/data/) on data source matter
 
 ## Getting started
 
