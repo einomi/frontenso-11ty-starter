@@ -2,7 +2,7 @@
 
 # Nunjucks+SCSS+TailwindCSS+ESNext starter based on 11ty and Gulp 💪
 
-This is a production-ready starter that features Nunjucks, SASS, TailwindCSS, Webpack and ESNext.
+This is a production-ready starter that features Nunjucks, SASS, TailwindCSS (with JIT compiler), Webpack and ESNext.
 
 11ty is responsible for building HTML only, the rest is built with Gulp.
 
