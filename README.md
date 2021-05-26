@@ -1,6 +1,6 @@
 ![frontenso-eleventy-starter](./src/images/frontenso-11ty-starter.png 'Title')
 
-# Nunjucks+SCSS+TailwindCSS+ESNext starter based on 11ty and Gulp 💪
+# Nunjucks + SCSS + TailwindCSS(JIT) + ESNext starter based on 11ty and Gulp 💪
 
 This is a production-ready starter that features Nunjucks, SASS, TailwindCSS (with JIT compiler), Webpack and ESNext.
 
