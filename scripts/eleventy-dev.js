@@ -13,8 +13,10 @@ eleventyProcess.stdout.on('data', (data) => {
   log(chalk.green(data));
 });
 
+const ERROR_TITLE = 'Eleventy Error';
+
 eleventyProcess.stderr.on('data', (data) => {
-  log(chalk.red(data.toString()));
+  log(chalk.red(ERROR_TITLE));
   const message = data
     .toString()
     .replace('Problem writing Eleventy templates', '')
@@ -24,16 +26,17 @@ eleventyProcess.stderr.on('data', (data) => {
   if (!message) {
     return;
   }
+  log(chalk.red(message));
   notifier.notify({
-    title: 'Eleventy Error',
-    message: message.trim(),
+    title: ERROR_TITLE,
+    message: message,
   });
 });
 
 eleventyProcess.on('error', (error) => {
-  chalk.red(error);
+  log(chalk.red(error.message));
   notifier.notify({
-    title: 'Eleventy error',
+    title: ERROR_TITLE,
     message: error.message,
   });
 });
