@@ -1,4 +1,5 @@
-![frontenso-eleventy-starter](./src/images/frontenso-11ty-starter.png 'Title')
+![frontenso-eleventy-starter](./src/images/frontenso-11ty-starter.png 'Title')</br>
+*by* **[frontenso.com](https://frontenso.com)**
 
 # Nunjucks + SCSS + TailwindCSS(JIT) + ESNext starter based on 11ty and Gulp 💪
 
