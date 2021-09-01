@@ -31,7 +31,7 @@ eleventyProcess.stderr.on('data', (data) => {
   log(chalk.red(message));
   notifier.notify({
     title: ERROR_TITLE,
-    message: message,
+    message,
   });
 });
 

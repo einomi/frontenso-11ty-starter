@@ -18,7 +18,7 @@ module.exports = function styles() {
         errorHandler: function (err) {
           log.error(colors.red(err.message));
           notifier.notify({
-            title: 'SASS compilation error',
+            title: 'TailwindCSS Compilation Error',
             message: err.message,
           });
         },
