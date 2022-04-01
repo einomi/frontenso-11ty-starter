@@ -95,20 +95,6 @@ Keep in mind that, in doing so, the SVG file `some-vector-image.svg` should be l
 
 See examples in the index.njk
 
-## The sprite file for raster images
-
-You can use the following mixin in SASS code for making the raster sprite:
-
-```
-+s('some-image')
-```
-
-For retina images, you can use the `sr` mixin. Please, keep in mind that you need to have two images in this case `some-image.png` and `some-image@2x.png`:
-
-```
-+sr('some-image')
-```
-
 The images should be kept inside the `src/images/sprites` in `png` format.
 
 ## {% image %} Nunjucks tag
