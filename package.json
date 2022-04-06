@@ -71,7 +71,7 @@
     "imagemin-pngquant": "^9.0.2",
     "node-notifier": "^9.0.0",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.7",
+    "postcss": "8.4.6",
     "postcss-assets": "^5.0.0",
     "postcss-sprites": "^4.2.1",
     "rimraf": "^3.0.2",
@@ -81,12 +81,24 @@
     "stylelint-scss": "^3.19.0",
     "tailwindcss": "^2.1.2",
     "through2": "^4.0.2",
-    "webpack": "^5.24.1",
+    "webpack": "5.69.1",
     "webpack-cli": "^4.5.0"
   },
   "devDependencies": {
-    "husky": "^4.3.8",
-    "prettier": "^2.2.1",
-    "pretty-quick": "^3.1.0"
+    "husky": "4.3.8",
+    "prettier": "2.5.1",
+    "pretty-quick": "3.1.3"
+  },
+  "overrides": {
+    "electron-to-chromium": "1.4.68",
+    "enhanced-resolve": "5.9.0",
+    "has-symbols": "1.0.2",
+    "lodash": "4.17.21",
+    "postcss": "8.4.6",
+    "raw-body": "2.4.3",
+    "sass": "1.49.8",
+    "terser": "5.11.0",
+    "uglify-js": "3.15.1",
+    "webpack": "5.69.1"
   }
 }
