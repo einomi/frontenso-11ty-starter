@@ -28,6 +28,9 @@ eleventyProcess.stderr.on('data', (data) => {
   if (!message) {
     return;
   }
+  if (message.toLowerCase().includes('benchmark')) {
+    return;
+  }
   log(chalk.red(message));
   notifier.notify({
     title: ERROR_TITLE,
@@ -36,6 +39,9 @@ eleventyProcess.stderr.on('data', (data) => {
 });
 
 eleventyProcess.on('error', (error) => {
+  if (!error.message) {
+    return;
+  }
   log(chalk.red(error.message));
   notifier.notify({
     title: ERROR_TITLE,
