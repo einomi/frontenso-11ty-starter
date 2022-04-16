@@ -1,5 +1,5 @@
 ![frontenso-eleventy-starter](./src/images/frontenso-11ty-starter.png 'Title')</br>
-*by* **[frontenso.com](https://frontenso.com)**
+_by_ **[frontenso.com](https://frontenso.com)**
 
 # Nunjucks + SCSS + TailwindCSS(JIT) + ESNext starter based on 11ty and Gulp 💪
 
@@ -83,19 +83,23 @@ Also, don't forget to add syntax highlighting for you code editor. If your edito
 
 This starter features Webpack v5 for building JS bundle.
 
+## Customize static path
+
+This template allows you to customize static path to project resources such as images, scripts, styles, and etc. Add an `.env` file to the root directory of the project with the following content `STATIC_PATH=http://localhost:9000` and use _STATIC_PATH_ like `<link rel="stylesheet" href="{{ STATIC_PATH }}/css/tailwind.css">`
+
+**Keep mind:** To use _STATIC_PATH_ in macros, it must be passed as props
+
 ## The SVG sprite
 
 It is possible to automatically keep your SVG files for the project inside a single SVG sprite with the [gulp-svgstore](https://github.com/w0rm/gulp-svgstore) plugin. So that it's better to add SVG files to the project in the following way:
 
 ```
-<svg><use xlink:href="#icon-some-vector-image"></use></svg>
+<svg><use xlink:href="/svg/sprite.svg#icon-some-vector-image"></use></svg>
 ```
 
-Keep in mind that, in doing so, the SVG file `some-vector-image.svg` should be located in the `src/assets/svg` directory. You can also set, for example, `fill` or `stroke` for this element on the page by using CSS selectors (so without setting them inside the SVG file).
+Keep in mind that, in doing so, the SVG file `some-vector-image.svg` should be located in the `src/svg` directory. You can also set, for example, `fill` or `stroke` for this element on the page by using CSS selectors (so without setting them inside the SVG file).
 
 See examples in the index.njk
-
-The images should be kept inside the `src/images/sprites` in `png` format.
 
 ## {% image %} Nunjucks tag
 
