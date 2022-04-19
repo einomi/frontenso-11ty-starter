@@ -19,6 +19,7 @@ const ERROR_TITLE = 'Eleventy Error';
 
 eleventyProcess.stderr.on('data', (data) => {
   log(chalk.red(ERROR_TITLE));
+  log(chalk.red(data.toString()));
   const message = data
     .toString()
     .replace('Problem writing Eleventy templates', '')
@@ -31,7 +32,6 @@ eleventyProcess.stderr.on('data', (data) => {
   if (message.toLowerCase().includes('benchmark')) {
     return;
   }
-  log(chalk.red(message));
   notifier.notify({
     title: ERROR_TITLE,
     message,
