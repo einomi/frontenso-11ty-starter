@@ -85,7 +85,7 @@ This starter features Webpack v5 for building JS bundle.
 
 ## Customize static path
 
-This template allows you to customize static path to project resources such as images, scripts, styles, and etc. Add an `.env` file to the root directory of the project with the following content `STATIC_PATH=http://localhost:9000` and use _STATIC_PATH_ like `<link rel="stylesheet" href="{{ STATIC_PATH }}/css/tailwind.css">`
+This template allows you to customize static path to project resources such as images, scripts, styles, etc. Add an `.env` file to the root directory of the project with the following content `STATIC_PATH=http://localhost:9000` and use _STATIC_PATH_ like `<link rel="stylesheet" href="{{ STATIC_PATH }}/css/tailwind.css">`
 
 **Keep mind:** To use _STATIC_PATH_ in macros, it must be passed as props
 
