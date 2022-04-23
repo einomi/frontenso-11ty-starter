@@ -59,7 +59,9 @@ function generateObject(metadata, attributes = {}) {
     );
   }
 
-  attributes.src = lowsrc[0].url;
+  attributes.src = `${process.env.STATIC_PATH ? process.env.STATIC_PATH : ''}${
+    lowsrc[0].url
+  }`;
   attributes.width = lowsrc[lowsrc.length - 1].width;
   attributes.height = lowsrc[lowsrc.length - 1].height;
 
@@ -86,7 +88,12 @@ function generateObject(metadata, attributes = {}) {
 
     const imgAttributes = { ...attributesWithoutSizes };
     const srcsetAttrValue = Object.values(lowsrc)
-      .map((entry) => entry.srcset)
+      .map(
+        (entry) =>
+          `${process.env.STATIC_PATH ? process.env.STATIC_PATH : ''}${
+            entry.srcset
+          }`
+      )
       .join(', ');
     imgAttributes.srcset = srcsetAttrValue;
     imgAttributes.sizes = attributes.sizes;
@@ -111,7 +118,14 @@ function generateObject(metadata, attributes = {}) {
 
       const sourceAttrs = {
         type: imageFormat[0].sourceType,
-        srcset: imageFormat.map((entry) => entry.srcset).join(', '),
+        srcset: imageFormat
+          .map(
+            (entry) =>
+              `${process.env.STATIC_PATH ? process.env.STATIC_PATH : ''}${
+                entry.srcset
+              }`
+          )
+          .join(', '),
       };
 
       if (attributes.sizes) {

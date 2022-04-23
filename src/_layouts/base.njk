@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <title>{% block title %}{% endblock %} | Site Name</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <head>
+    <meta charset="utf-8"/>
+    <title>
+      {% block title %}{% endblock %} | Site Name</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-  {% block stylesheets %}
-    <link rel="stylesheet" href="/css/tailwind.css">
-    <link rel="stylesheet" href="/css/styles.css">
-  {% endblock stylesheets %}
-</head>
-<body>
+    {% block stylesheets %}
+      <link rel="stylesheet" href="{{ STATIC_PATH }}/css/tailwind.css">
+      <link rel="stylesheet" href="{{ STATIC_PATH }}/css/styles.css">
+    {% endblock stylesheets %}
+  </head>
+  <body>
 
-{% block content %}
-{% endblock content %}
+    {% block content %}{% endblock content %}
 
-{% block scripts %}
-  <script src="/js/bundle.js"></script>
-{% endblock scripts %}
-</body>
+    {% block scripts %}
+      <script src="{{ STATIC_PATH }}/js/bundle.js"></script>
+    {% endblock scripts %}
+  </body>
 </html>
