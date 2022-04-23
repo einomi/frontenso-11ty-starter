@@ -1,8 +1,10 @@
+const path = require('path');
+
 const gulp = require('gulp');
 const rename = require('gulp-rename');
 const svgstore = require('gulp-svgstore');
 const svgmin = require('gulp-svgmin');
-const path = require('path');
+const cheerio = require('gulp-cheerio');
 
 const PATHS = require('../paths');
 
@@ -22,7 +24,7 @@ module.exports = function svg() {
             },
             {
               cleanupIDs: {
-                prefix: prefix + '-',
+                prefix: `${prefix}-`,
                 minify: true,
               },
             },
@@ -32,6 +34,15 @@ module.exports = function svg() {
     )
     .pipe(rename({ prefix: 'icon-' }))
     .pipe(svgstore({ inlineSvg: true }))
+    .pipe(
+      cheerio({
+        // eslint-disable-next-line id-length
+        run: ($) => {
+          $('svg').attr('style', 'display:none');
+        },
+        parserOptions: { xmlMode: true },
+      })
+    )
     .pipe(rename('sprite.svg'))
     .pipe(gulp.dest(PATHS.build.svg));
 };

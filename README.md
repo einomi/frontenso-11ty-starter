@@ -7,31 +7,17 @@ This is a production-ready starter that features Nunjucks, SASS, TailwindCSS (wi
 
 11ty is responsible for building HTML only, the rest is built with Gulp.
 
-Can be used in conjunction with any data source either a headless CMS, JSON, markdown, or any other data source that has a JS API. Please see [11ty documentation](https://www.11ty.dev/docs/data/) on data source matter
+Can be used in conjunction with any data source either a headless CMS, JSON, markdown, or any other data source that has a possibility to fetch data using JavaScript. Please see [11ty documentation](https://www.11ty.dev/docs/data/) on data source matter.
 
 ## Getting started
 
 #### 1. Install dependencies:
-
-With `yarn`
-
-```
-yarn install
-```
-
-or with `npm`:
 
 ```
 npm install
 ```
 
 #### 2. Run the project for development:
-
-```
-yarn start
-```
-
-or
 
 ```
 npm start
@@ -44,19 +30,19 @@ npm start
 #### Running the project for development:
 
 ```
-yarn start
+npm start
 ```
 
 #### Build the project for production:
 
 ```
-yarn build
+npm run build
 ```
 
 #### Creating a production-ready zip-archive `build.zip`:
 
 ```
-yarn zip
+npm run zip
 ```
 
 ## Folder Structure
@@ -85,21 +71,29 @@ This starter features Webpack v5 for building JS bundle.
 
 ## Customize static path
 
-This template allows you to customize static path to project resources such as images, scripts, styles, etc. Add an `.env` file to the root directory of the project with the following content `STATIC_PATH=http://localhost:9000` and use _STATIC_PATH_ like `<link rel="stylesheet" href="{{ STATIC_PATH }}/css/tailwind.css">`
+This template allows you to customize static path of project resources such as images, scripts, styles, etc. Add an `.env` file to the root directory of the project with the following content `STATIC_PATH=http://localhost:9000` and use _STATIC_PATH_ like `<link rel="stylesheet" href="{{ STATIC_PATH }}/css/tailwind.css">`
 
 **Keep mind:** To use _STATIC_PATH_ in macros, it must be passed as props
 
 ## The SVG sprite
 
-It is possible to automatically keep your SVG files for the project inside a single SVG sprite with the [gulp-svgstore](https://github.com/w0rm/gulp-svgstore) plugin. So that it's better to add SVG files to the project in the following way:
+It is possible to store SVG files inside a single SVG sprite. The starter uses the [gulp-svgstore](https://github.com/w0rm/gulp-svgstore) plugin to generate a sprite. SVG sprites technique is the recommended approach for adding vector images to the project.
+
+The SVG sprite markup is inlined in `base.njk` template using `{% svg_prite %}` shortcode function (there is no need to modify this code).
+
+To display an SVG image on the page, first add if to the `src/svg` folder. Let's suppose that this file would have the name `some-vector.svg`.
+
+Then add it to the page in the following way:
 
 ```
-<svg><use xlink:href="/svg/sprite.svg#icon-some-vector-image"></use></svg>
+<svg><use xlink:href="#icon-some-vector"></use></svg>
 ```
 
-Keep in mind that, in doing so, the SVG file `some-vector-image.svg` should be located in the `src/svg` directory. You can also set, for example, `fill` or `stroke` for this element on the page by using CSS selectors (so without setting them inside the SVG file).
+**Keep mind:** `some-vector.svg` file should be located in the `src/svg` directory so that `gulp-svgstore` could add it to the SVG sprite.
 
-See examples in the index.njk
+You can also set, for example, `fill` or `stroke` for this element on the page by using CSS selectors (so without setting them inside the SVG file). It is also possible to animate SVG element parts (like `<path>`, `<circle>`, etc).
+
+You can also take a look at the `<svg>` examples in the index.njk.
 
 ## {% image %} Nunjucks tag
 
@@ -107,7 +101,7 @@ This tag allows generating AVIF and WebP images. It also creates srcset sizes au
 
 ## Inlining raster or svg images into HTML
 
-<b>Attention!</b> The files, which should be inlined, have to seat in the `src/images/inline` directory.
+<b>Attention!</b> The files, which should be inlined, have to be placed into the `src/images/inline` folder.
 
 ### Inlining raster or svg images in CSS
 
@@ -131,12 +125,20 @@ height: height('some-image.png')
 background-size: size('some-image.png')
 ```
 
+<b>Attention!</b> Please use this feature with caution as it may bloat the final `CSS` file. Inlining images could be a good approach if the file is quite small, in other cases prefer `{% image %}` tag.
+
 ### Inlining images inside Nunjucks templates
 
 ```
 <img src="{% inline 'some-image.png' %}" alt="Some image" />
 ```
 
+<b>Attention!</b> Please use this feature with caution as it may bloat the final `HTML` file. Inlining images could be a good approach if the file is quite small, in other cases prefer `{% image %}` tag.
+
 ## Useful links
 
 [Nunjucks syntax](https://mozilla.github.io/nunjucks/templating.html).
+
+[TailwindCSS](https://tailwindcss.com/)
+
+[TailwindCSS Cheatsheet](https://nerdcave.com/tailwind-cheat-sheet)

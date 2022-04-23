@@ -3,6 +3,7 @@ const { RemoteAssetCache } = require('@11ty/eleventy-cache-assets');
 const sizeOf = require('image-size');
 
 const generateImageHTML = require('./generate-image-html');
+const fs = require('fs');
 
 function imageShortcode(src, attributes = {}, maxWidth = 2636) {
   console.log('src', src);
@@ -63,6 +64,15 @@ function imageShortcode(src, attributes = {}, maxWidth = 2636) {
   return generateImageHTML(metadata, imageAttributes);
 }
 
+function inlineSvgSprite() {
+  try {
+    return fs.readFileSync('./dist/svg/sprite.svg', 'utf8');
+  } catch (error) {
+    console.warn("SVG Sprite file doesn't exist");
+  }
+  return '';
+}
+
 module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({ 'src/public': '/' });
 
@@ -77,6 +87,7 @@ module.exports = (eleventyConfig) => {
   });
 
   eleventyConfig.addNunjucksShortcode('image', imageShortcode);
+  eleventyConfig.addNunjucksShortcode('svg_sprite', inlineSvgSprite);
 
   return {
     dir: {

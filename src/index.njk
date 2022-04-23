@@ -59,9 +59,9 @@
         <h3 class="text-lg font-semibold mb-1">
           An image inlined in the CSS example (compress such images manually!)
         </h3>
-        <h4 class="max-w-xl text-lg text-red-600 mb-6 font-bold tracking-wide uppercase">
-          Attention! Please use this feature with caution as it may bloat the
-          final css file!
+        <h4 class="max-w-xl text-lg text-red-600 mb-6 font-bold tracking-wide">
+          <span class="uppercase">Attention!</span> Please use this feature with caution as it may bloat the
+          final CSS file. Inlining images could be a good approach if the file is quite small, in other cases prefer `&#123;% image %&#125;` tag.
         </h4>
         <div class="page-home__inline-image-example"></div>
       </section>
@@ -70,7 +70,7 @@
           Vector image example (using SVG sprite)
         </h3>
         <svg class="text-black fill-current w-20 h-20">
-          <use xlink:href="/svg/sprite.svg#icon-logo-example"></use>
+          <use xlink:href="#icon-logo-example"></use>
         </svg>
       </section>
       <div class="flex items-center">
@@ -87,7 +87,7 @@
           </h3>
           <div class="flex">
             <svg class="relative top-0.75 mr-2 w-5 h-5">
-              <use xlink:href="/svg/sprite.svg#icon-movies"></use>
+              <use xlink:href="#icon-movies"></use>
             </svg>
             <div class="text-sm">
               <div class="line -mb-0.75">
