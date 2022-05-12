@@ -7,7 +7,6 @@ const sprites = require('postcss-sprites');
 const assets = require('postcss-assets');
 const sass = require('gulp-dart-sass');
 const sourcemaps = require('gulp-sourcemaps');
-const cssmin = require('gulp-clean-css');
 const gulpif = require('gulp-if');
 const log = require('fancy-log');
 const colors = require('ansi-colors');
@@ -15,6 +14,15 @@ const purgecss = require('@fullhuman/postcss-purgecss');
 
 const PATHS = require('../paths');
 const { IS_PRODUCTION } = require('../env');
+
+const sassOptions = {
+  errLogToConsole: true,
+  includePaths: ['./node_modules/'],
+};
+
+if (IS_PRODUCTION) {
+  sassOptions.outputStyle = 'compressed';
+}
 
 const POSTCSS_PROCESSORS = [
   assets({
@@ -56,14 +64,8 @@ module.exports = function styles() {
       })
     )
     .pipe(gulpif(!IS_PRODUCTION, sourcemaps.init()))
-    .pipe(
-      sass({
-        errLogToConsole: true,
-        includePaths: ['./node_modules/'],
-      })
-    )
+    .pipe(sass(sassOptions))
     .pipe(postcss(POSTCSS_PROCESSORS))
-    .pipe(gulpif(IS_PRODUCTION, cssmin({ processImport: false })))
     .pipe(gulpif(!IS_PRODUCTION, sourcemaps.write()))
     .pipe(gulp.dest(PATHS.build.styles));
 };
