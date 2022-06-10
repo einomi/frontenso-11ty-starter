@@ -160,12 +160,13 @@ function mapObjectToHTML(tagName, attrs = {}) {
 function generateHTML(metadata, attributes = {}, options = {}) {
   const isInline = options.whitespaceMode !== 'block';
   const markup = [];
-  const obj = generateObject(metadata, attributes);
+  const { pictureClass, ...restAttributes } = attributes;
+  const obj = generateObject(metadata, restAttributes);
   for (const tag in obj) {
     if (!Array.isArray(obj[tag])) {
       markup.push(mapObjectToHTML(tag, obj[tag]));
     } else {
-      markup.push(`<${tag}>`);
+      markup.push(`<${tag}${pictureClass ? ` class="${pictureClass}"` : ''}>`);
       for (const child of obj[tag]) {
         const childTagName = Object.keys(child)[0];
         markup.push(

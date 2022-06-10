@@ -99,6 +99,10 @@ You can also take a look at the `<svg>` examples in the index.njk.
 
 This tag allows generating AVIF and WebP images. It also creates srcset sizes automatically based on the given max width (the 3rd argument) and widths in the `.eleventy.js` config file.
 
+If you need to add CSS class to <picture> tag then pass it as `pictureClass` among the options (second argument). To add CSS class to <img> pass `class` to `options` argument.
+
+See examples in index.njk to get familiar with `{% image %}` tag.
+
 ## Inlining raster or svg images into HTML
 
 <b>Attention!</b> The files, which should be inlined, have to be placed into the `src/images/inline` folder.
