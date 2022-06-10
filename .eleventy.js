@@ -6,7 +6,6 @@ const generateImageHTML = require('./generate-image-html');
 const fs = require('fs');
 
 function imageShortcode(src, attributes = {}, maxWidth = 2636) {
-  console.log('src', src);
   if (typeof src != 'string') {
     throw new Error(`The path for the image is incorrect: ${src}`);
   }
