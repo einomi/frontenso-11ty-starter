@@ -1,6 +1,4 @@
 const Image = require('@11ty/eleventy-img');
-const { RemoteAssetCache } = require('@11ty/eleventy-cache-assets');
-const sizeOf = require('image-size');
 
 const generateImageHTML = require('./generate-image-html');
 const fs = require('fs');
