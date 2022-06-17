@@ -1,6 +1,11 @@
+/** @callback Callback
+ * @param {{isVisible: boolean}} visibilityParams
+ * @returns {void}
+ *  */
+
 /** @typedef {object} VisibilitySensorEntry
  * @property {HTMLElement} node
- * @property {Function} cb
+ * @property {Callback} cb
  * @property {boolean} once
  * */
 
@@ -13,7 +18,7 @@ class VisibilitySensor {
 
   constructor() {
     this.observer = new IntersectionObserver(this.update, {
-      rootMargin: '0px 0px -50% 0px',
+      rootMargin: '-10% 0px -50% 0px',
     });
   }
 
@@ -38,7 +43,7 @@ class VisibilitySensor {
 
   /**
    * @param {HTMLElement} node
-   * @param {Function} cb
+   * @param {Callback} cb
    */
   observe(node, cb) {
     this.observer.observe(node);
@@ -47,7 +52,7 @@ class VisibilitySensor {
 
   /**
    * @param {HTMLElement} node
-   * @param {Function} cb
+   * @param {Callback} cb
    */
   observeOnce(node, cb) {
     this.observer.observe(node);
