@@ -4,7 +4,7 @@
  *  */
 
 /** @typedef {object} VisibilitySensorEntry
- * @property {HTMLElement} node
+ * @property {Element} node
  * @property {Callback} cb
  * @property {boolean} once
  * */
@@ -42,7 +42,7 @@ class VisibilitySensor {
   };
 
   /**
-   * @param {HTMLElement} node
+   * @param {Element} node
    * @param {Callback} cb
    */
   observe(node, cb) {
@@ -51,7 +51,7 @@ class VisibilitySensor {
   }
 
   /**
-   * @param {HTMLElement} node
+   * @param {Element} node
    * @param {Callback} cb
    */
   observeOnce(node, cb) {
@@ -60,7 +60,7 @@ class VisibilitySensor {
   }
 
   /**
-   * @param {HTMLElement} node
+   * @param {Element} node
    */
   unobserve(node) {
     this.observer.unobserve(node);
