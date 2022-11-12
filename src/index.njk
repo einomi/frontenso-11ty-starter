@@ -29,7 +29,9 @@
       {% include './components/some-component/some-component.njk' %}
       <section class="mt-14">
         <h3 class="text-lg font-semibold mb-5">
-          Image example (AVIF and WebP are generated)
+          Image example 1. AVIF and WebP are generated using {{
+            '{ % image % }'
+          }} Nujucks tag.
         </h3>
         {# not passing maxWidth here #}
         <div class="max-w-xs">
@@ -43,7 +45,8 @@
       </section>
       <section class="mt-14">
         <h3 class="text-lg font-semibold mb-5">
-          Image example 2, maxWidth=500 is passed (AVIF and WebP are generated)
+          Image example 2. maxWidth=500 is passed. AVIF and WebP are also
+          generated.
         </h3>
         {# passing maxWidth=500 here #}
         <div class="max-w-xs bg-red-100">
@@ -57,8 +60,9 @@
         </div>
       </section>
       <section class="mt-14">
-        <h3 class="text-lg font-semibold mb-1">
-          An image inlined in the CSS example (compress such images manually!)
+        <h3 class="text-lg font-semibold mb-1 max-w-xl">
+          An image inlined in CSS example (compress such images manually!). Not
+          recommended for wide usage, see below.
         </h3>
         <h4 class="max-w-xl text-lg text-red-600 mb-6 font-bold tracking-wide">
           <span class="uppercase">Attention!</span> Please use this feature with
@@ -114,7 +118,9 @@
           </p>
           <p>
             Use any other expression instead of `true` in
-            {{ '{% set %}' }} block.
+            {{ '{% set %}' }} block. You can also use `else` if you need. This syntax
+            is called `if expression` in Nunjucks. It is similar to JavaScript ternary
+            or Python one-line if expression.
           </p>
           <!-- {% set someClass = "some-class" if true %} -->
           <p class="{{ someClass }}">
