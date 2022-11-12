@@ -73,7 +73,7 @@ This starter features Webpack v5 for building JS bundle.
 
 This template allows you to customize the static path for project resources such as images, scripts, styles, etc (for example, it can be a custom CDN URL). Add an `.env` file to the root directory of the project with the following content `STATIC_PATH=http://localhost:9000` and use _STATIC_PATH_ like `<link rel="stylesheet" href="{{ STATIC_PATH }}/css/tailwind.css">`
 
-**Keep mind:** To use _STATIC_PATH_ in macros, it must be passed as props
+**Keep mind:** To use _STATIC_PATH_ in Nunjucks macros, it must be passed as props
 
 ## The SVG sprite
 
