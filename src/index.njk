@@ -61,8 +61,10 @@
           An image inlined in the CSS example (compress such images manually!)
         </h3>
         <h4 class="max-w-xl text-lg text-red-600 mb-6 font-bold tracking-wide">
-          <span class="uppercase">Attention!</span> Please use this feature with caution as it may bloat the
-          final CSS file. Inlining images could be a good approach if the file is quite small, in other cases prefer `&#123;% image %&#125;` tag.
+          <span class="uppercase">Attention!</span> Please use this feature with
+          caution as it may bloat the final CSS file. Inlining images could be a
+          good approach if the file is quite small, in other cases prefer `&#123;%
+          image %&#125;` tag.
         </h4>
         <div class="page-home__inline-image-example"></div>
       </section>
@@ -78,6 +80,49 @@
         <div></div>
         <div></div>
       </div>
+      <section class="mt-14 space-y-3">
+        <h3 class="text-lg font-semibold">
+          Example of using if statement in an html attribute
+        </h3>
+        <div class="max-w-xl space-y-3">
+          <p>
+            This starter uses twig melody parser to format .njk files with
+            Prettier automatically on each commit. However, there is a known
+            issue when trying to use {{ '{% if %}' }} block in a html attribute.
+          </p>
+          <p>
+            For example, the following code would throw a syntax error on code
+            format:
+          </p>
+          <p class="text-pink-600 text-[12px] block font-mono">
+            {{
+              '<p class="{% if someExpression %}some-class-name{% endif %}">Some paragraph</p>'
+            }}
+          </p>
+          <p>
+            To avoid it use {{ '{% set %}' }} wrapped in html comment (melody parser
+            ignore html comments by default) like this:
+          </p>
+          <p class="text-pink-600 text-[12px] block font-mono">
+            {{ '<!-- {% set someClass = "some-class" if true %} -->' }}
+          </p>
+          <p>
+            then you can use `someClass` in the markup like this.
+          </p>
+          <p class="text-pink-600 text-[12px] block font-mono">
+            {{ '<p class="{{ someClass }}">' }}
+          </p>
+          <p>
+            Use any other expression instead of `true` in
+            {{ '{% set %}' }} block.
+          </p>
+          <!-- {% set someClass = "some-class" if true %} -->
+          <p class="{{ someClass }}">
+            For example, this text has html class attribute (check the code)
+            calculated using an `if` statement and `{{ '{% set %}' }}` block.
+          </p>
+        </div>
+      </section>
       <section class="mt-14">
         <h3 class="text-lg font-semibold mb-5">
           Tailwind CSS Example

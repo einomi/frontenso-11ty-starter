@@ -80,6 +80,7 @@
     "postcss-assets": "^5.0.0",
     "postcss-sprites": "^4.2.1",
     "prettier": "2.5.1",
+    "prettier-plugin-twig-nunjucks-melody": "^0.1.0",
     "rimraf": "^3.0.2",
     "stylelint": "^13.11.0",
     "stylelint-config-idiomatic-order": "^8.1.0",
