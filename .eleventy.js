@@ -27,11 +27,13 @@ function imageShortcode(src, attributes = {}, maxWidth = 2636) {
     outputDir: './dist/images/',
     sharpAvifOptions: {
       quality: 60,
-      speed: 6,
+      effort: 9,
+      chromaSubsampling: '4:2:0',
     },
     sharpWebpOptions: {
-      quality: 60,
-      alphaQuality: 80,
+      quality: 70,
+      alphaQuality: 77,
+      chromaSubsampling: '4:2:0',
     },
     sharpJpegOptions: {
       quality: 60,
