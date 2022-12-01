@@ -53,6 +53,12 @@ Create components at least for the parts of the UI that appear in multiple place
 
 It is recommended that you will keep your components inside the `src/components/` folder. This starter kit allows you to keep your markup, styles, and JavaScript code for a component in one folder and then to use them in multiple places. Please, see the `src/components/` folder for examples. Notice how different types of components are arranged. Also, It is not absolutely mandatory to include Nunjucks or JS code for a component if you feel that it doesn't make too much sense. For example, when the markup is quite simple or when a component doesn't have JS logic.
 
+## TypeScript
+
+This boilerplate supports TypeScript, however it is completely optional to use it for development. For TypeScript support, it was decided to use JSDoc notation ([officially supported TypeScript syntax](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)) because it does not make you to write .ts files with TS syntax, with this approach you can continue to write .js files with JS syntax and JSDoc notation for TypeScript support. Also, in this case you can easily disable TypeScript if you do not need it at some point of your development process. (for example, to speed up the development or if you have new developers on a project that are not familiar with TypeScript)
+
+If you do not need TypeScript, simply remove tsconfig.json file from your project.
+
 ## Nunjucks HTML template engine
 
 [Nunjucks](https://mozilla.github.io/nunjucks/) is a powerful HTML template engine with a syntax very similar to jinja2. Nunjucks alleviates writing highly-maintainable HTML code.
