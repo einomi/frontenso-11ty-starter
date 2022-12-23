@@ -26,12 +26,12 @@ function imageShortcode(src, attributes = {}, maxWidth = 2636) {
     urlPath: '/images/',
     outputDir: './dist/images/',
     sharpAvifOptions: {
-      quality: 60,
-      effort: 9,
+      quality: 55,
+      effort: 5,
       chromaSubsampling: '4:2:0',
     },
     sharpWebpOptions: {
-      quality: 70,
+      quality: 65,
       alphaQuality: 77,
       chromaSubsampling: '4:2:0',
     },
