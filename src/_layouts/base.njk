@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>
-      {% block title %}{% endblock %} | Site Name</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+      {% block title %}
+      {% endblock %}| Site Name
+    </title>
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="description" content="Set a proper description" />
 
     {% block stylesheets %}
-      <link rel="stylesheet" href="{{ STATIC_PATH }}/css/tailwind.css">
-      <link rel="stylesheet" href="{{ STATIC_PATH }}/css/styles.css">
-    {% endblock stylesheets %}
+      <link rel="stylesheet" href="{{ STATIC_PATH }}/css/tailwind.css" />
+      <link rel="stylesheet" href="{{ STATIC_PATH }}/css/styles.css" />
+    {% endblock %}
   </head>
   <body>
     {% svg_sprite %}
 
-    {% block content %}{% endblock content %}
+    {% block content %}
+    {% endblock %}
 
     {% block scripts %}
       <script src="{{ STATIC_PATH }}/js/bundle.js"></script>
-    {% endblock scripts %}
+    {% endblock %}
   </body>
 </html>

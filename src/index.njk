@@ -14,9 +14,8 @@
           alt: 'frōntensō-11ty-starter',
           title: 'frōntensō-11ty-starter',
           pictureClass: 'my-picture-custom-class',
-          class: 'example-image block max-w-full h-auto mb-14'
-        },
-        280
+          class: 'example-image block max-w-full h-auto mb-14 max-w-[320px]'
+        }
       %}
 
       {{
@@ -27,6 +26,57 @@
         })
       }}
       {% include './components/some-component/some-component.njk' %}
+      <section class="mt-14 space-y-3">
+        <h3 class="text-lg font-semibold">
+          Example of using `if` statement in a html attribute
+        </h3>
+        <div class="max-w-xl space-y-3">
+          <p>
+            This starter uses twig melody parser to format .njk files with
+            Prettier automatically on each commit. However, there is a known
+            issue when trying to use {{ '{% if %}' }} block in a html attribute.
+          </p>
+          <p>
+            For example, the following code would throw a syntax error during
+            the code formatting:
+          </p>
+          <p class="text-pink-600 text-[12px] block font-mono">
+            {{
+              '<p class="{% if someExpression %}some-class-name{% endif %}">Some paragraph</p>'
+            }}
+          </p>
+          <p>
+            To avoid it use {{ '{% set %}' }} wrapped in html comment (melody parser
+            ignore html comments by default) like this:
+          </p>
+          <p class="text-pink-600 text-[12px] block font-mono">
+            {{ '<!-- {% set someClass = "some-class" if true %} -->' }}
+          </p>
+          <p>
+            then you can use `someClass` in the markup like this.
+          </p>
+          <p class="text-pink-600 text-[12px] block font-mono">
+            {{ '<p class="{{ someClass }}">' }}
+          </p>
+          <p>
+            Use any other expression instead of `true` in
+            {{ '{% set %}' }} block. You can also use `else` if you need. This syntax
+            is called `if expression` in Nunjucks. It is similar to JavaScript ternary
+            or Python one-line if expression.
+          </p>
+          <!-- {% set someClass = "some-class" if true %} -->
+          <p class="{{ someClass }}">
+            For example, this text has html class attribute (check the code)
+            calculated using an `if` statement and `{{ '{% set %}' }}` block.
+          </p>
+          <p class="font-semibold">
+            NOTE. If you are still experiencing issues with formatting .njk
+            files, just remove `prettier-plugin-twig-nunjucks-melody` npm
+            package from your project and .njk files will not be formatted
+            anymore.
+          </p>
+        </div>
+      </section>
       <section class="mt-14">
         <h3 class="text-lg font-semibold mb-5">
           Image example 1. AVIF and WebP are generated using {{
@@ -84,57 +134,6 @@
         <div></div>
         <div></div>
       </div>
-      <section class="mt-14 space-y-3">
-        <h3 class="text-lg font-semibold">
-          Example of using `if` statement in a html attribute
-        </h3>
-        <div class="max-w-xl space-y-3">
-          <p>
-            This starter uses twig melody parser to format .njk files with
-            Prettier automatically on each commit. However, there is a known
-            issue when trying to use {{ '{% if %}' }} block in a html attribute.
-          </p>
-          <p>
-            For example, the following code would throw a syntax error during
-            the code formatting:
-          </p>
-          <p class="text-pink-600 text-[12px] block font-mono">
-            {{
-              '<p class="{% if someExpression %}some-class-name{% endif %}">Some paragraph</p>'
-            }}
-          </p>
-          <p>
-            To avoid it use {{ '{% set %}' }} wrapped in html comment (melody parser
-            ignore html comments by default) like this:
-          </p>
-          <p class="text-pink-600 text-[12px] block font-mono">
-            {{ '<!-- {% set someClass = "some-class" if true %} -->' }}
-          </p>
-          <p>
-            then you can use `someClass` in the markup like this.
-          </p>
-          <p class="text-pink-600 text-[12px] block font-mono">
-            {{ '<p class="{{ someClass }}">' }}
-          </p>
-          <p>
-            Use any other expression instead of `true` in
-            {{ '{% set %}' }} block. You can also use `else` if you need. This syntax
-            is called `if expression` in Nunjucks. It is similar to JavaScript ternary
-            or Python one-line if expression.
-          </p>
-          <!-- {% set someClass = "some-class" if true %} -->
-          <p class="{{ someClass }}">
-            For example, this text has html class attribute (check the code)
-            calculated using an `if` statement and `{{ '{% set %}' }}` block.
-          </p>
-          <p class="font-semibold">
-            NOTE. If you are still experiencing issues with formatting .njk
-            files, just remove `prettier-plugin-twig-nunjucks-melody` npm
-            package from your project and .njk files will not be formatted
-            anymore.
-          </p>
-        </div>
-      </section>
       <section class="mt-14">
         <h3 class="text-lg font-semibold mb-5">
           Tailwind CSS Example
@@ -151,7 +150,7 @@
               <div class="line -mb-0.75">
                 Movies
               </div>
-              <div class="text-gray-400">
+              <div class="text-gray-600">
                 For cosy evenings
               </div>
             </div>
