@@ -3,13 +3,19 @@ _by_ **[frontenso.com](https://frontenso.com)**
 
 # Nunjucks + SCSS + TailwindCSS(JIT) + ESNext starter based on 11ty and Gulp 💪
 
-This is a production-ready starter that features Nunjucks, SASS, TailwindCSS (with JIT compiler), Webpack and ESNext.
+This is a production-ready starter that features Nunjucks, SASS, TailwindCSS (with JIT compiler), Webpack, ESNext, and live reloading.
 
 11ty is responsible for building HTML only, the rest is built with Gulp.
 
 Can be used in conjunction with any data source either a headless CMS, JSON, markdown, or any other data source that has a possibility to fetch data using JavaScript. Please see [11ty documentation](https://www.11ty.dev/docs/data/) on data source matter.
 
 ## Getting started
+
+### Using this repository as a template
+
+You can use this repository as a template by simply clicking on the green "Use this template" button here on this GitHub page. You will then be redirected to configure a new repository for your new project.
+
+### Running for development
 
 #### 1. Install dependencies:
 
@@ -74,6 +80,10 @@ To use Nunjucks more effectively, please, read its [documentation](https://mozil
 You can also read [11ty documentation](https://www.11ty.dev/docs/languages/nunjucks/) on templating and [data sources](https://www.11ty.dev/docs/data/).
 
 Also, don't forget to add syntax highlighting for you code editor. If your editor doesn't support Nunjucks syntax, you can use syntax highlighting for Twig template engine instead. Just set up opening .njk files with Twig syntax highlighting for that.
+
+## Using a different template engine
+
+You can freely use any HTML engine of your choice like Pug, Handlebars or even pure HTML. In order to do that, you need to replace Nunjucks with the new template engine in `.eleventy.js`. Please refer to 11ty documentation on [how to configure a different template engine](https://www.11ty.dev/docs/languages/).
 
 ## Webpack v5
 
@@ -148,6 +158,12 @@ background-size: size('some-image.png')
 ```
 
 <b>Attention!</b> Please use this feature with caution as it may bloat the final `HTML` file. Inlining images could be a good approach if the file is quite small, in other cases prefer `{% image %}` tag.
+
+## Examples
+
+For code examples, please refer to `src/index.njk`.
+
+To see them live, open the index page in the browser by running `npm start` and going to http://localhost:9000
 
 ## Useful links
 
