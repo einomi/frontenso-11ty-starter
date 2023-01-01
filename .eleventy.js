@@ -1,4 +1,6 @@
 const Image = require('@11ty/eleventy-img');
+const Assets = require('assets');
+const path = require('path');
 
 const generateImageHTML = require('./generate-image-html');
 const fs = require('fs');
@@ -72,6 +74,13 @@ function inlineSvgSprite() {
   return '';
 }
 
+const base64Resolver = new Assets();
+function inline(imgPath, callback) {
+  const pathResolved = path.resolve(imgPath);
+
+  base64Resolver.data(pathResolved, callback);
+}
+
 module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({ 'src/public': '/' });
 
@@ -87,6 +96,7 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addNunjucksShortcode('image', imageShortcode);
   eleventyConfig.addNunjucksShortcode('svg_sprite', inlineSvgSprite);
+  eleventyConfig.addNunjucksAsyncFilter('inline', inline);
 
   return {
     dir: {

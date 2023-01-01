@@ -9,14 +9,9 @@
 {% block content %}
   <div class="page-home page">
     <div class="container">
-      {% image './src/images/frontenso-11ty-starter.png',
-        {
-          alt: 'frōntensō-11ty-starter',
-          title: 'frōntensō-11ty-starter',
-          pictureClass: 'my-picture-custom-class',
-          class: 'example-image block max-w-full h-auto mb-14 max-w-[320px]'
-        }
-      %}
+      <img class="max-w-[320px] mb-14"
+        src="{{ './src/images/frontenso-11ty-starter.png'|inline }}"
+        alt="" />
       <div class="mb-14">
         <a href="https://github.com/einomi/frontenso-11ty-starter"
           target="_blank"
