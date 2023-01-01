@@ -123,9 +123,15 @@ If you need to add CSS class to <picture> tag then pass it as `pictureClass` amo
 
 See examples in index.njk to get familiar with `{% image %}` tag.
 
-## Inlining raster or svg images into HTML
+### Inlining images as base64 strings inside Nunjucks templates using `inline` filter
 
-<b>Attention!</b> The files, which should be inlined, have to be placed into the `src/images/inline` folder.
+This may become a useful approach if you need to display an image instantly on the page without making a request to the server.
+
+```
+<img src="{{ 'src/images/some-image.png' | inline }}" alt="" />
+```
+
+<b>Attention!</b> Please use this feature with caution as it may bloat the final `HTML` file. Inlining images could be a good approach if the file is quite small, in other cases prefer `{% image %}` tag.
 
 ### Inlining raster or svg images in CSS
 
@@ -151,19 +157,13 @@ background-size: size('some-image.png')
 
 <b>Attention!</b> Please use this feature with caution as it may bloat the final `CSS` file. Inlining images could be a good approach if the file is quite small, in other cases prefer `{% image %}` tag.
 
-### Inlining images inside Nunjucks templates
-
-```
-<img src="{% inline 'some-image.png' %}" alt="Some image" />
-```
-
-<b>Attention!</b> Please use this feature with caution as it may bloat the final `HTML` file. Inlining images could be a good approach if the file is quite small, in other cases prefer `{% image %}` tag.
-
 ## Examples
 
 For code examples, please refer to `src/index.njk`.
 
-To see them live, open the index page in the browser by running `npm start` and going to http://localhost:9000
+To see them live, open the index page in the browser by running `npm start` and going to [http://localhost:9000](http://localhost:9000)
+
+You can also check them on the [live demo page](https://frontenso-11ty-starter.netlify.app/)
 
 ## Useful links
 
