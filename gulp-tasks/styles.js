@@ -3,7 +3,6 @@ const plumber = require('gulp-plumber');
 const notifier = require('node-notifier');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
-const sprites = require('postcss-sprites');
 const assets = require('postcss-assets');
 const sass = require('gulp-dart-sass');
 const sourcemaps = require('gulp-sourcemaps');
@@ -28,17 +27,6 @@ const POSTCSS_PROCESSORS = [
   assets({
     loadPaths: [PATHS.src.imagesInline],
     cache: true,
-  }),
-
-  sprites({
-    stylesheetPath: './dist/css/',
-    spritePath: './dist/images/',
-    retina: true,
-    padding: 4,
-    filterBy: (image) =>
-      /sprites\/.*\.png$/gi.test(image.url)
-        ? Promise.resolve()
-        : Promise.reject(),
   }),
 
   IS_PRODUCTION &&
