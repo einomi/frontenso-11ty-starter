@@ -15,4 +15,4 @@ gulp.task('zip', zip);
 
 // gulp.task('w3c-validator', w3cValidator);
 
-gulp.task('default', gulp.parallel(svg, 'styles', watch));
+gulp.task('default', gulp.parallel('styles', watch));

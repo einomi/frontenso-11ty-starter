@@ -6,7 +6,7 @@
     "start": "npm-run-all clean gulp:svg -p dev:*",
     "gulp:svg": "gulp svg",
     "gulp:styles": "gulp styles",
-    "dev:gulp": "gulp&",
+    "dev:gulp": "gulp",
     "dev:eleventy": "node ./scripts/eleventy-dev.js",
     "dev:webpack": "webpack --watch",
     "build": "cross-env NODE_ENV=production npm-run-all -s clean gulp:svg build-webpack build-eleventy gulp:styles beautify-html",
