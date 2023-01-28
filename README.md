@@ -61,7 +61,7 @@ To keep your components organized, it is a good idea to keep them inside the `sr
 
 ## Image Quality Settings
 
-You can change image compression settings for avif, webp, jpeg in .eleventy.js file
+You can change image compression settings for `avif`, `webp`, `jpeg`, `png` in `.eleventy.js` file
 
 ## TypeScript
 
