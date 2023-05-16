@@ -52,7 +52,10 @@ typings/
 *.tgz
 
 # dotenv environment variables file
-.env*
+.env
+.env.development
+.env.test
+.env.production
 
 # Mac files
 .DS_Store

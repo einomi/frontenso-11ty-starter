@@ -1,8 +1,6 @@
-![frontenso-eleventy-starter](./src/images/frontenso-11ty-starter.png 'Title')
+# Nunjucks + SCSS + TailwindCSS(JIT) + ESNext starter based on 11ty and Gulp ✨
 
-# Nunjucks + SCSS + TailwindCSS(JIT) + ESNext starter based on 11ty and Gulp 💪
-
-This starter kit is ready for production and is built on a component-based structure, utilizing the power of Nunjucks, SCSS, and TailwindCSS (with a Just-in-Time compiler), Webpack, ESNext, and live reloading.
+This starter kit is built on a component-based structure, utilizing the power of Nunjucks, SCSS, and TailwindCSS (with a Just-in-Time compiler), Webpack, ESNext, and live reloading.
 
 It uses 11ty to handle HTML generation and Gulp for the rest of the build process.
 
@@ -12,7 +10,7 @@ It is flexible and can be used in conjunction with any data source, whether it b
 
 ### Using this repository as a template
 
-This repository is the perfect starting point for your next project. By simply clicking on the green "Use this template" button on this GitHub page, you can easily create a new repository tailored to your needs. From there, you can customize and configure the repository to your liking and begin your development journey with ease.
+This repository can be a perfect starting point for your next project. By simply clicking on the green "Use this template" button on this GitHub page, you can easily create a new repository. After creating a new repository you can customize and configure it to your liking and begin your development journey with ease.
 
 ### Running for development
 
@@ -30,15 +28,9 @@ npm start
 
 #### 3. Open development URL - [`http://localhost:9000/`](http://localhost:9000/).
 
-## Scripts
+## Other scripts
 
-#### Running the project for development:
-
-```
-npm start
-```
-
-#### Build the project for production:
+#### Build the project for production environment:
 
 ```
 npm run build
@@ -60,7 +52,9 @@ To keep your components organized, it is a good idea to keep them inside the `sr
 
 ## Image Quality Settings
 
-You can change image compression settings for avif, webp, jpeg, png files in `.eleventy.js` config.
+You can change image compression settings for avif, webp, jpeg files in `.eleventy.js` config.
+
+Png are compressed with [pngquant](https://pngquant.org/) as it provides the best compression. You can change png compression settings in `optimize-png.js` config.
 
 ## TypeScript
 
@@ -93,6 +87,16 @@ This starter kit uses Webpack v5 to build the JavaScript bundle. However, it doe
 This template provides the ability to customize the static path for project resources such as images, scripts, styles, etc. For example, you can use a custom CDN URL. Add an `.env` file to the root directory of the project with the following content `STATIC_PATH=http://localhost:9000` then you can reference the _STATIC_PATH_ variable in your code like this `<link rel="stylesheet" href="{{ STATIC_PATH }}/css/tailwind.css">`
 
 **Note:** When using _STATIC_PATH_ in Nunjucks macros, it must be passed as props.
+
+## .env file and environment variables
+
+### Environment variables in JS code
+
+This starter kit uses the [dotenv](https://www.npmjs.com/package/dotenv) package to load environment variables from a `.env` file. You can add environment variables to the `.env` file and use them in your code. Additionally, don't forget to include the new variable in the webpack configuration under the EnvironmentPlugin settings. After restarting the project, you will be able to reference the variable within your code like this: `process.env.MY_VARIABLE`.
+
+### Environment variables in Nunjucks templates
+
+If you need to use environment variables in Nunjucks templates, you can add JS files for the variables in `src/_data/` folder and then reference them in Nunjucks templates like this: `{{ MY_VARIABLE }}`. As an example, see the `src/_data/STATIC_PATH.js` file.
 
 ## The SVG sprite
 

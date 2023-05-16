@@ -1,6 +1,8 @@
 'use strict';
 const path = require('path');
 
+const webpack = require('webpack');
+
 const IS_PRODUCTION = require('./env').IS_PRODUCTION;
 
 const entryPoints = {
@@ -30,4 +32,5 @@ module.exports = {
   optimization: {
     minimize: IS_PRODUCTION,
   },
+  plugins: [new webpack.EnvironmentPlugin(['STATIC_PATH'])],
 };
