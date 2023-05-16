@@ -9,9 +9,14 @@
 {% block content %}
   <div class="page-home page">
     <div class="container">
-      <img class="max-w-[320px] w-full mb-4"
-        src="{{ 'src/images/frontenso-11ty-starter.png'|inline }}"
-        alt="" />
+      <div class="flex items-center mb-10">
+        <svg class="mr-3 w-10 h-10">
+          <use xlink:href="#icon-logo"></use>
+        </svg>
+        <h1 class="text-2xl font-medium pb-[0.05em]">
+          frontenso-11ty-starter
+        </h1>
+      </div>
       <ul class="mb-14 text-sm lg:text-base font-bold rounded bg-black text-white p-4 pl-8 space-y-1 list-disc max-w-xl">
         <li>Component-based approach</li>
         <li>Super-fast builds with Gulp and SCSS support</li>
@@ -95,7 +100,7 @@
           Vector image example (using SVG sprite)
         </h3>
         <svg class="text-black fill-current w-20 h-20">
-          <use xlink:href="#icon-logo-example"></use>
+          <use xlink:href="#icon-logo"></use>
         </svg>
       </section>
       <div class="flex items-center">
