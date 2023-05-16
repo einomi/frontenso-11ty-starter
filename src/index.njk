@@ -12,24 +12,27 @@
       <img class="max-w-[320px] w-full mb-4"
         src="{{ 'src/images/frontenso-11ty-starter.png'|inline }}"
         alt="" />
-      <ul class="mb-10 text-sm lg:text-base font-bold rounded bg-black text-white p-4 pl-8 space-y-1 list-disc max-w-3xl">
+      <ul class="mb-14 text-sm lg:text-base font-bold rounded bg-black text-white p-4 pl-8 space-y-1 list-disc max-w-xl">
         <li>Component-based approach</li>
         <li>Super-fast builds with Gulp and SCSS support</li>
         <li>TailwindCSS with JIT</li>
         <li>Linters included</li>
         <li>Webpack config for most cases</li>
       </ul>
-      <p>
+      <p class="mb-14 max-w-2xl">
         This is a production-ready component-based starter that features
         Nunjucks, SCSS, TailwindCSS (with JIT compiler), Webpack, ESNext, and
         live reloading.
       </p>
       <div class="mb-14">
-        <a href="https://github.com/einomi/frontenso-11ty-starter"
-          target="_blank"
-          class="text-blue-600 font-bold hover:opacity-80">
-          GitHub Documentation
-        </a>
+        <p class="font-bold hover:opacity-80 text-lg">
+          Please also read
+          <a href="https://github.com/einomi/frontenso-11ty-starter"
+            target="_blank"
+            class="text-blue-600">
+            the documentation on GitHub
+          </a>
+        </p>
       </div>
       <h3 class="text-lg font-semibold mb-4">
         A UI component example (check out the code)
@@ -124,13 +127,13 @@
       </section>
       <section class="mt-14 space-y-3">
         <h3 class="text-lg font-semibold">
-          Example of using `if` statement in a html attribute
+          Example of using `if` statement in an HTML attribute
         </h3>
         <div class="max-w-xl space-y-3">
           <p>
             This starter uses twig melody parser to format .njk files with
             Prettier automatically on each commit. However, there is a known
-            issue when trying to use {{ '{% if %}' }} block in a html attribute.
+            issue when trying to use {{ '{% if %}' }} block in a HTML attribute.
           </p>
           <p>
             For example, the following code would throw a syntax error during
@@ -142,8 +145,8 @@
             }}
           </p>
           <p>
-            To avoid it use {{ '{% set %}' }} wrapped in html comment (melody parser
-            ignore html comments by default) like this:
+            To avoid it use {{ '{% set %}' }} wrapped in HTML comment (melody parser
+            ignore HTML comments by default) like this:
           </p>
           <p class="text-pink-600 text-[12px] block font-mono">
             {{ '<!-- {% set someClass = "some-class" if true %} -->' }}
@@ -162,7 +165,7 @@
           </p>
           <!-- {% set someClass = "some-class" if true %} -->
           <p class="{{ someClass }}">
-            For example, this text has html class attribute (check the code)
+            For example, this text has HTML class attribute (check the code)
             calculated using an `if` statement and `{{ '{% set %}' }}` block.
           </p>
           <p class="font-semibold">
