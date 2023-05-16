@@ -1,7 +1,4 @@
-<div style="vertical-align: middle; background-color: white; border-radius: 2px; padding: 10px 12px; display: flex;">
-  <img style="margin-right: 10px;" src="src/svg/logo.svg" width="28" height="28" alt="" />
-  <span style="font-size: 18px; color: black;">frōntensō-11ty-starter</span>
-</div>
+<img style="margin-right: 10px;" src="src/svg/logo-with-text.svg" alt="" />
 
 # Nunjucks + SCSS + TailwindCSS(JIT) + ESNext starter based on 11ty and Gulp ✨
 
