@@ -1,5 +1,11 @@
 # Nunjucks + SCSS + TailwindCSS(JIT) + ESNext starter based on 11ty and Gulp ✨
 
+## Netlify demo page with examples and additional bits of documentation
+
+[https://frontenso-11ty-starter.netlify.app/](https://frontenso-11ty-starter.netlify.app/)
+
+## Features
+
 This starter kit is built on a component-based structure, utilizing the power of Nunjucks, SCSS, and TailwindCSS (with a Just-in-Time compiler), Webpack, ESNext, and live reloading.
 
 It uses 11ty to handle HTML generation and Gulp for the rest of the build process.

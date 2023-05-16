@@ -1,6 +1,7 @@
 'use strict';
 const path = require('path');
 
+// eslint-disable-next-line no-unused-vars
 const webpack = require('webpack');
 
 const IS_PRODUCTION = require('./env').IS_PRODUCTION;
@@ -32,5 +33,6 @@ module.exports = {
   optimization: {
     minimize: IS_PRODUCTION,
   },
-  plugins: [new webpack.EnvironmentPlugin(['STATIC_PATH'])],
+  // Uncomment this section if you want to use environment variables in your JS
+  // plugins: [new webpack.EnvironmentPlugin(['STATIC_PATH'])],
 };
