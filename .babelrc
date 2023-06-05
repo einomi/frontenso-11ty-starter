@@ -3,9 +3,8 @@
     [
       "@babel/env",
       {
-        "targets": {
-          "browsers": ["last 2 versions", "not dead"]
-        }
+        "useBuiltIns": "usage",
+        "corejs": 3
       }
     ]
   ],
