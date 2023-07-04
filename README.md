@@ -9,9 +9,21 @@
 
 ## Features
 
-This starter kit is built on a component-based structure, utilizing the power of Nunjucks, SCSS, and TailwindCSS (with a Just-in-Time compiler), Webpack, ESNext, and live reloading.
+This starter kit is built on a component-based structure, utilizing the power of Nunjucks, SCSS, and TailwindCSS (with a Just-in-Time compiler), Webpack, ESNext, and live reloading. Modern image formats out of the box (AVIF, WebP) and image optimization.
 
 It uses 11ty to handle HTML generation and Gulp for the rest of the build process.
+
+Core features:
+
+- Component-based approach.
+- Fast builds with Gulp and SCSS support.
+- Modern image formats out of the box (AVIF, WebP) and image optimization.
+- No JS-framework dependencies (you can add preact or any other framework though).
+- Live reloading.
+- Linters included.
+- Webpack config for most cases.
+- (Optional) TailwindCSS with JIT.
+- (Optional) TypeScript support using JSDoc notation.
 
 It is flexible and can be used in conjunction with any data source, whether it be a headless CMS, JSON, Markdown or any other data source that can be fetched via JavaScript. For more information on how to work with data sources, please refer to the [11ty documentation](https://www.11ty.dev/docs/data/).
 
@@ -58,6 +70,10 @@ Decomposing the UI into separate, less coupled components is highly recommended 
 It is a best practice to create components for parts of the UI that appear in multiple places in your project, such as buttons, common page sections, widgets, and sliders.
 
 To keep your components organized, it is a good idea to keep them inside the `src/components/` folder. This starter kit allows you to keep the markup, styles, and JavaScript code for a component all in one place, making it easy to use them in multiple locations throughout your project. Take a look at the `src/components/` folder for examples of how different types of components are arranged. It's important to note that it is not always necessary to include Nunjucks or JavaScript code for a component if it does not make sense to do so, for example, when the markup is quite simple or when a component does not have any JavaScript logic.
+
+## Modern Image Formats
+
+This starter uses `@11ty/eleventy-img` to generate modern image formats (AVIF, WebP) and optimize images. See examples on the [demo page](https://frontenso-11ty-starter.netlify.app/).
 
 ## Image Quality Settings
 
