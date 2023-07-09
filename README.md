@@ -120,7 +120,9 @@ Another tip for working with Nunjucks is to ensure that your code editor has syn
 
 ## Using a different template engine
 
-You have the flexibility to use any HTML template engine of your preference, such as Pug, Handlebars, or even plain HTML. To do this, you need to replace Nunjucks with your desired template engine in the `.eleventy.js` file. For instructions on how to configure a different template engine, refer to the 11ty documentation on the topic. You can find the link on how to configure a different template engine in the [11ty documentation](https://www.11ty.dev/docs/languages/).
+11ty has support for many template engines. If you prefer to use a different template engine, you can easily do so.
+
+To do this, you need to replace Nunjucks with your desired template engine in the `.eleventy.js` file. You can find information on how to configure a different template engine in the [11ty documentation](https://www.11ty.dev/docs/languages/).
 
 ## Webpack v5
 
