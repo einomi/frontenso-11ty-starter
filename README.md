@@ -8,6 +8,33 @@
 
 [https://frontenso-11ty-starter.netlify.app/](https://frontenso-11ty-starter.netlify.app/)
 
+# Table of Contents
+
+- [Jamstack compatible 11ty Boilerplate](#jamstack-compatible-11ty-boilerplate)
+- [Netlify demo page](#netlify-demo-page)
+- [Features](#features)
+- [Getting started](#getting-started)
+  - [Using this repository as a template](#using-this-repository-as-a-template)
+  - [Running for development](#running-for-development)
+- [Other scripts](#other-scripts)
+- [Component-based Approach](#component-based-approach)
+- [Modern Image Formats](#modern-image-formats)
+- [Image Quality Settings](#image-quality-settings)
+- [TypeScript (optional)](#typescript-optional)
+- [TailwindCSS (optional)](#tailwindcss-optional)
+- [Nunjucks HTML template engine](#nunjucks-html-template-engine)
+- [Using a different template engine](#using-a-different-template-engine)
+- [Webpack v5](#webpack-v5)
+- [Customize static path](#customize-static-path)
+- [.env file and environment variables](#env-file-and-environment-variables)
+- [The SVG sprite](#the-svg-sprite)
+- [{% image %} Nunjucks tag](#-image-nunjucks-tag)
+- [Inlining images as base64 strings inside Nunjucks templates using `inline` filter](#inlining-images-as-base64-strings-inside-nunjucks-templates-using-inline-filter)
+- [Inlining raster or svg images in CSS](#inlining-raster-or-svg-images-in-css)
+- [Example of using `if` statement in an HTML attribute](#example-of-using-if-statement-in-an-html-attribute)
+- [Examples](#examples)
+- [Useful links](#useful-links)
+
 ## Features
 
 This starter kit is built on a component-based structure, utilizing the power of Nunjucks, SCSS, and TailwindCSS (with a Just-in-Time compiler), Webpack, ESNext, and live reloading. Modern image formats out of the box (AVIF, WebP) and image optimization.
