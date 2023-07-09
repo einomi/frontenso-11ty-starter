@@ -16,7 +16,8 @@
 - [Getting started](#getting-started)
   - [Using this repository as a template](#using-this-repository-as-a-template)
   - [Running for development](#running-for-development)
-- [Other scripts](#other-scripts)
+  - [Build the project for production environment](#build-the-project-for-production-environment)
+  - [Creating a zip-archive `build.zip`](#creating-a-zip-archive-buildzip)
 - [Component-based Approach](#component-based-approach)
 - [Modern Image Formats](#modern-image-formats)
 - [Image Quality Settings](#image-quality-settings)
@@ -77,19 +78,19 @@ npm start
 
 #### 3. Open development URL - [`http://localhost:9000/`](http://localhost:9000/).
 
-## Other scripts
-
-#### Build the project for production environment:
+### Build the project for production environment:
 
 ```
 npm run build
 ```
 
-#### Creating a production-ready zip-archive `build.zip`:
+### Creating a zip-archive `build.zip`:
 
 ```
 npm run zip
 ```
+
+This command uses `npm run build` to build the project and then creates a zip-archive `build.zip` in the root folder of the project.
 
 ## Component-based Approach
 
