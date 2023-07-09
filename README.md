@@ -1,6 +1,7 @@
 <img style="margin-right: 10px;" src="src/svg/logo-with-text.svg" alt="" />
 
 # Jamstack compatiple 11ty Boilerplate
+
 # Nunjucks + SCSS + TailwindCSS(JIT) + ESNext starter based on 11ty and Gulp ✨
 
 ## Netlify demo page with examples and additional bits of documentation
@@ -81,11 +82,29 @@ You can change image compression settings for avif, webp, jpeg files in `.eleven
 
 Png are compressed with [pngquant](https://pngquant.org/) as it provides the best compression. You can change png compression settings in `optimize-png.js` config.
 
-## TypeScript
+## TypeScript (optional)
 
 This boilerplate has built-in support for TypeScript, but it is completely optional to use it during development. We have chosen to use JSDoc notation ([which is officially supported by TypeScript team](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)) to provide TypeScript support. This means that you don't have to write your code using TypeScript syntax, and can instead continue to write your code using JavaScript syntax with JSDoc notation for TypeScript support. This approach also allows you to easily disable TypeScript if you do not need it at some point during your development process, for example, to speed up development or if you have new developers working on the project who are not familiar with TypeScript.
 
-If you don't need TypeScript, simply remove tsconfig.json file from your project.
+### If you don't need TypeScript
+
+Simply remove tsconfig.json file from your project.
+
+## TailwindCSS (optional)
+
+This starter kit comes with TailwindCSS support out of the box. TailwindCSS is a utility-first CSS framework that allows you to quickly build custom user interfaces. For more information on how to use TailwindCSS, please refer to the [TailwindCSS documentation](https://tailwindcss.com/docs).
+
+### If you don't need TailwindCSS
+
+Simply remove the following line:
+
+```
+<link rel="stylesheet" href="{{ STATIC_PATH }}/css/tailwind.css" />
+```
+
+from `src/_layouts/base.njk` file.
+
+You can also remove `tailwindcss` section from `postcss.config.js` and remove `tailwind` gulp task from `gulpfile.js`, but it is optional.
 
 ## Nunjucks HTML template engine
 
