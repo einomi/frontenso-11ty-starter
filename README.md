@@ -4,7 +4,7 @@
 
 # Nunjucks + SCSS + TailwindCSS(JIT) + ESNext starter based on 11ty and Gulp ✨
 
-## Netlify demo page with examples and additional bits of documentation
+## Netlify demo page with examples and additional bits of documentation and examples
 
 [https://frontenso-11ty-starter.netlify.app/](https://frontenso-11ty-starter.netlify.app/)
 
