@@ -161,7 +161,7 @@
           </p>
           <p>
             To avoid it use {{ '{% set %}' }} wrapped in HTML comment (melody parser
-            ignore HTML comments by default) like this:
+            ignores HTML comments by default) like this:
           </p>
           <p class="text-pink-600 text-[12px] block font-mono">
             {{ '<!-- {% set someClass = "some-class" if true %} -->' }}
@@ -180,7 +180,7 @@
           </p>
           <!-- {% set someClass = "some-class" if true %} -->
           <p class="{{ someClass }}">
-            For example, this text has HTML class attribute (check the code)
+            For example, this text has an HTML class attribute (check the code)
             calculated using an `if` statement and `{{ '{% set %}' }}` block.
           </p>
           <p class="font-semibold">
