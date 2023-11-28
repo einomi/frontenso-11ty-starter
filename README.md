@@ -1,6 +1,6 @@
 <img style="margin-right: 10px;" src="src/svg/logo-with-text.svg" alt="" />
 
-# Jamstack compatiple 11ty Boilerplate
+# Jamstack compatible 11ty Boilerplate
 
 # Nunjucks + SCSS + TailwindCSS(JIT) + ESNext starter based on 11ty and Gulp ✨
 
