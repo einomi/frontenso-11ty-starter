@@ -28,7 +28,7 @@ module.exports = {
       },
     ],
   },
-  devtool: IS_PRODUCTION ? undefined : 'eval',
+  devtool: IS_PRODUCTION ? undefined : 'eval-source-map',
   mode: IS_PRODUCTION ? 'production' : 'development',
   optimization: {
     minimize: IS_PRODUCTION,
