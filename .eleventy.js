@@ -1,11 +1,14 @@
 const Image = require('@11ty/eleventy-img');
 const Assets = require('assets');
 const path = require('path');
+const {
+  eleventyImageOnRequestDuringServePlugin,
+} = require('@11ty/eleventy-img');
 
 const generateImageHTML = require('./generate-image-html');
 const fs = require('fs');
 
-function imageShortcode(src, attributes = {}, maxWidth = 2636) {
+async function imageShortcode(src, attributes = {}, maxWidth = 2636) {
   if (typeof src != 'string') {
     throw new Error(`The path for the image is incorrect: ${src}`);
   }
@@ -40,11 +43,10 @@ function imageShortcode(src, attributes = {}, maxWidth = 2636) {
     sharpJpegOptions: {
       quality: 60,
     },
+    transformOnRequest: process.env.ELEVENTY_RUN_MODE === 'serve',
   };
 
-  Image(src, options);
-
-  const metadata = Image.statsSync(src, options);
+  const metadata = await Image(src, options);
 
   const firstMetadataObj = metadata[Object.keys(metadata)[0]];
   const maxWidthReal = firstMetadataObj.reduce((acc, curr) => {
@@ -94,9 +96,11 @@ module.exports = (eleventyConfig) => {
     open: false,
   });
 
-  eleventyConfig.addNunjucksShortcode('image', imageShortcode);
+  eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
   eleventyConfig.addNunjucksShortcode('svg_sprite', inlineSvgSprite);
   eleventyConfig.addNunjucksAsyncFilter('inline', inline);
+
+  eleventyConfig.addPlugin(eleventyImageOnRequestDuringServePlugin);
 
   return {
     dir: {
