@@ -88,7 +88,7 @@
     "stylelint-scss": "^3.19.0",
     "tailwindcss": "^2.2.19",
     "through2": "^4.0.2",
-    "webpack": "^5.88.1",
+    "webpack": "^5.97.1",
     "webpack-cli": "^4.5.0"
   },
   "devDependencies": {
