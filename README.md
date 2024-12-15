@@ -234,34 +234,6 @@ background-size: size('some-image.png')
 
 <b>Warning!</b> Use this feature with caution as it may cause the final CSS file to become large. Inlining images is a good option if the file is relatively small, otherwise, it is recommended to use the `{% image %}` tag instead.
 
-## Example of using `if` statement in an HTML attribute
-
-This starter uses twig melody parser to format .njk files with Prettier automatically on each commit. However, there is a known issue when trying to use {% if %} block in a HTML attribute.
-
-For example, the following code would throw a syntax error during the code formatting:
-
-```
-<p class="{% if someExpression %}some-class-name{% endif %}">Some paragraph</p>
-```
-
-To avoid it use {% set %} wrapped in HTML comment (melody parser ignore HTML comments by default) like this:
-
-```
-<!-- {% set someClass = "some-class" if true %} -->
-```
-
-then you can use `someClass` in the markup like this.
-
-```
-<p class="{{ someClass }}">
-```
-
-Use any other expression instead of `true` in {% set %} block. You can also use `else` if you need. This syntax is called `if expression` in Nunjucks. It is similar to JavaScript ternary or Python one-line if expression.
-
-For example, this text has HTML class attribute (check the code) calculated using an `if` statement and `{% set %}` block.
-
-**NOTE. If you are still experiencing issues with formatting .njk files, just remove `prettier-plugin-twig-nunjucks-melody` npm package from your project and .njk files will not be formatted anymore.**
-
 ## Examples
 
 For code examples, please refer to `src/index.njk`.
