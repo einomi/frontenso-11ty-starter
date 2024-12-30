@@ -7,27 +7,27 @@
   justify-content: center;
   padding: 1px 20px 0;
   border: 2px solid rgba(#fff, 0.2);
-  border-radius: 8px;
+  backdrop-filter: blur(8px);
   background-color: rgba(#fff, 0.05);
+  border-radius: 8px;
   color: #fff;
   cursor: pointer;
   font-size: 16px;
   font-weight: 700;
   letter-spacing: -0.5px;
-  backdrop-filter: blur(8px);
   transition: all 0.2s ease;
 
   &:hover {
-    background-color: rgba(#fff, 0.1);
     border-color: rgba(#fff, 0.3);
+    background-color: rgba(#fff, 0.1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   &:active {
-    background-color: rgba(#fff, 0.15);
     border-color: rgba(#fff, 0.35);
-    transform: translateY(0);
+    background-color: rgba(#fff, 0.15);
     box-shadow: none;
+    transform: translateY(0);
 
     .button__chevron-right {
       transform: translateX(2px);
