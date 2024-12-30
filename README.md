@@ -33,6 +33,7 @@
 - [Inlining images as base64 strings inside Nunjucks templates using `inline` filter](#inlining-images-as-base64-strings-inside-nunjucks-templates-using-inline-filter)
 - [Inlining raster or svg images in CSS](#inlining-raster-or-svg-images-in-css)
 - [Example of using `if` statement in an HTML attribute](#example-of-using-if-statement-in-an-html-attribute)
+- [Enabling system notifications for errors (node-notifier)](#enabling-system-notifications-for-errors-node-notifier)
 - [Examples](#examples)
 - [Useful links](#useful-links)
 
@@ -233,6 +234,18 @@ background-size: size('some-image.png')
 ```
 
 <b>Warning!</b> Use this feature with caution as it may cause the final CSS file to become large. Inlining images is a good option if the file is relatively small, otherwise, it is recommended to use the `{% image %}` tag instead.
+
+## Enabling system notifications for errors (node-notifier)
+
+We use `node-notifier` to display system notifications for Eleventy errors. If you want to see these notifications in your operating system, make sure to enable notifications for your terminal application:
+
+macOS: Go to System Settings (or System Preferences) → Notifications & Focus → Find your terminal application (e.g. Terminal, iTerm, VS Code integrated terminal), then enable Allow Notifications.
+
+Windows: Open Settings → System → Notifications & actions and ensure notifications are allowed for your chosen terminal or shell app.
+
+Linux: This can depend on your distribution and notification daemon. In GNOME-based distros, open Settings → Notifications; in others, consult your system’s notification settings.
+
+Once notifications are enabled, any error messages sent via `node-notifier` will pop up on your system. If you don't see them, double-check that you granted permission to the correct application.
 
 ## Examples
 
