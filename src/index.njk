@@ -6,10 +6,10 @@
 {% endblock %}
 
 {% block content %}
-  <div class="page-home page">
-    <div class="container">
+  <div class="page-home page bg-gray-900 text-gray-100 min-h-screen py-8">
+    <div class="container mx-auto px-4">
       <div class="flex items-center mb-10">
-        <svg class="mr-3 w-10 h-10">
+        <svg class="mr-3 w-10 h-10 text-blue-400 fill-current">
           <use xlink:href="#icon-logo"></use>
         </svg>
         <h1 class="text-2xl font-medium pb-[0.05em]">frontenso-11ty-starter</h1>
@@ -29,7 +29,12 @@
         </li>
         <li>Live reloading.</li>
         <li>Linters included.</li>
+        <li>System notifications for build errors.</li>
         <li>Webpack config for most cases.</li>
+        <li>SVG sprite generation and optimization.</li>
+        <li>Environment variables support via .env files.</li>
+        <li>HTML minification for production builds.</li>
+        <li>Flexible static path configuration.</li>
         <li>(Optional) TailwindCSS with JIT.</li>
         <li>(Optional) TypeScript support using JSDoc notation.</li>
       </ul>
@@ -44,7 +49,7 @@
           <a
             href="https://github.com/einomi/frontenso-11ty-starter"
             target="_blank"
-            class="text-blue-600"
+            class="text-blue-400 underline"
           >
             the documentation on GitHub
           </a>
@@ -83,7 +88,7 @@
           generated.
         </h3>
         {# passing maxWidth=500 here #}
-        <div class="max-w-xs bg-red-100">
+        <div class="max-w-xs bg-gray-800 p-2 rounded">
           {%
             image './src/images/wolf.png',
             {
@@ -99,7 +104,7 @@
           An image inlined in CSS example (compress such images manually!). Not
           recommended for wide usage, see below.
         </h3>
-        <h4 class="max-w-xl text-lg text-red-600 mb-6 font-bold tracking-wide">
+        <h4 class="max-w-xl text-lg text-red-400 mb-6 font-bold tracking-wide">
           <span class="uppercase">Attention!</span> Please use this feature with
           caution as it may bloat the final CSS file. Inlining images could be a
           good approach if the file is quite small, in other cases prefer
@@ -111,7 +116,7 @@
         <h3 class="text-lg font-semibold mb-5">
           Vector image example (using SVG sprite)
         </h3>
-        <svg class="text-black fill-current w-20 h-20">
+        <svg class="fill-current text-blue-400 w-20 h-20">
           <use xlink:href="#icon-logo"></use>
         </svg>
       </section>
@@ -121,17 +126,19 @@
       </div>
       <section class="mt-14">
         <h3 class="text-lg font-semibold mb-5">Tailwind CSS Example</h3>
-        <div class="px-4 py-4 rounded w-64 shadow shadow-md">
-          <h3 class="bold mb-2 text-blue-600 hover-default font-bold">
+        <div class="px-4 py-4 rounded w-64 shadow-md bg-gray-800">
+          <h3 class="bold mb-2 text-blue-400 hover:opacity-80 font-bold">
             Some section
           </h3>
           <div class="flex">
-            <svg class="relative top-0.75 mr-2 w-5 h-5">
+            <svg
+              class="relative top-0.75 mr-2 w-5 h-5 fill-current text-gray-100"
+            >
               <use xlink:href="#icon-movies"></use>
             </svg>
             <div class="text-sm">
               <div class="line -mb-0.75">Movies</div>
-              <div class="text-gray-600">For cosy evenings</div>
+              <div class="text-gray-400">For cosy evenings</div>
             </div>
           </div>
         </div>
