@@ -52,7 +52,12 @@ Core features:
 - No JS-framework dependencies (you can add preact or any other framework though).
 - Live reloading.
 - Linters included.
+- System notifications for build errors.
 - Webpack config for most cases.
+- SVG sprite generation and optimization.
+- Environment variables support via .env files.
+- HTML minification for production builds.
+- Flexible static path configuration.
 - (Optional) TailwindCSS with JIT.
 - (Optional) TypeScript support using JSDoc notation.
 
