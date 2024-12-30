@@ -2,7 +2,7 @@
 
 # Jamstack Compatible 11ty Boilerplate
 
-# Nunjucks + SCSS + TailwindCSS(JIT) + ESNext starter based on 11ty and Gulp ✨
+# Nunjucks + SCSS + Tailwind CSS + ESNext starter based on 11ty and Gulp ✨
 
 ## Netlify demo page with examples and additional bits of documentation and examples
 
@@ -22,7 +22,7 @@
 - [Modern image formats](#modern-image-formats)
 - [Image quality settings](#image-quality-settings)
 - [TypeScript (optional)](#typescript-optional)
-- [TailwindCSS (optional)](#tailwindcss-optional)
+- [Tailwind CSS (optional)](#tailwindcss-optional)
 - [Nunjucks HTML template engine](#nunjucks-html-template-engine)
 - [Using a different template engine](#using-a-different-template-engine)
 - [Webpack v5](#webpack-v5)
@@ -40,14 +40,14 @@
 
 ## Features
 
-This starter kit is built on a component-based structure, utilizing the power of Nunjucks, SCSS, and TailwindCSS (with a Just-in-Time compiler), Webpack, ESNext, and live reloading. Modern image formats out of the box (AVIF, WebP) and image optimization.
+This starter kit is built on a component-based structure, utilizing the power of Nunjucks, SCSS, and Tailwind CSS, Webpack, ESNext, and live reloading. Modern image formats out of the box (AVIF, WebP) and image optimization.
 
 It uses 11ty to handle HTML generation and Gulp for the rest of the build process.
 
 Core features:
 
 - Component-based approach.
-- Fast builds with Gulp and SCSS support.
+- Fast builds with Gulp, SCSS, Tailwind CSS, and PostCSS support.
 - Modern image formats out of the box (AVIF, WebP) and image optimization.
 - No JS-framework dependencies (you can add preact or any other framework though).
 - Live reloading.
@@ -58,7 +58,7 @@ Core features:
 - Environment variables support via .env files.
 - HTML minification for production builds.
 - Flexible static path configuration.
-- (Optional) TailwindCSS with JIT.
+- (Optional) Tailwind CSS with JIT.
 - (Optional) TypeScript support using JSDoc notation.
 
 It is flexible and can be used in conjunction with any data source, whether it be a headless CMS, JSON, Markdown or any other data source that can be fetched via JavaScript. For more information on how to work with data sources, please refer to the [11ty documentation](https://www.11ty.dev/docs/data/).
@@ -125,11 +125,11 @@ This boilerplate has built-in support for TypeScript, but it is completely optio
 
 Simply remove tsconfig.json file from your project.
 
-## TailwindCSS (optional)
+## Tailwind CSS (optional)
 
-This starter kit comes with TailwindCSS support out of the box. TailwindCSS is a utility-first CSS framework that allows you to quickly build custom user interfaces. For more information on how to use TailwindCSS, please refer to the [TailwindCSS documentation](https://tailwindcss.com/docs).
+This starter kit comes with Tailwind CSS support out of the box. Tailwind CSS is a utility-first CSS framework that allows you to quickly build custom user interfaces. For more information on how to use Tailwind CSS, please refer to the [Tailwind CSS documentation](https://tailwindcss.com/docs).
 
-### If you don't need TailwindCSS
+### If you don't need Tailwind CSS
 
 Simply remove the following line:
 
@@ -294,6 +294,14 @@ You can also check them on the [live demo page](https://frontenso-11ty-starter.n
 
 [Nunjucks syntax](https://mozilla.github.io/nunjucks/templating.html)
 
-[TailwindCSS](https://tailwindcss.com/)
+[11ty Image plugin](https://www.11ty.dev/docs/plugins/image/)
 
-[TailwindCSS Cheatsheet](https://nerdcave.com/tailwind-cheat-sheet)
+[11ty Documentation](https://www.11ty.dev/docs/)
+
+[Gulp Documentation](https://gulpjs.com/docs/en/getting-started/quick-start)
+
+[SCSS Documentation](https://sass-lang.com/documentation/)
+
+[Tailwind CSS](https://tailwindcss.com/)
+
+[Tailwind CSS Cheatsheet](https://nerdcave.com/tailwind-cheat-sheet)
