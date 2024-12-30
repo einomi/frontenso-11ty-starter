@@ -1,5 +1,4 @@
 {% extends './_layouts/base.njk' %}
-
 {% from './components/button/button.njk' import button %}
 
 {% block title %}
@@ -13,11 +12,11 @@
         <svg class="mr-3 w-10 h-10">
           <use xlink:href="#icon-logo"></use>
         </svg>
-        <h1 class="text-2xl font-medium pb-[0.05em]">
-          frontenso-11ty-starter
-        </h1>
+        <h1 class="text-2xl font-medium pb-[0.05em]">frontenso-11ty-starter</h1>
       </div>
-      <ul class="mb-14 text-sm lg:text-base font-bold rounded pl-4 space-y-1 list-disc max-w-xl">
+      <ul
+        class="mb-14 text-sm lg:text-base font-bold rounded pl-4 space-y-1 list-disc max-w-xl"
+      >
         <li>Component-based approach.</li>
         <li>Fast builds with Gulp and SCSS support.</li>
         <li>
@@ -42,9 +41,11 @@
       <div class="mb-14">
         <p class="font-bold hover:opacity-80 text-lg">
           Please also read
-          <a href="https://github.com/einomi/frontenso-11ty-starter"
+          <a
+            href="https://github.com/einomi/frontenso-11ty-starter"
             target="_blank"
-            class="text-blue-600">
+            class="text-blue-600"
+          >
             the documentation on GitHub
           </a>
         </p>
@@ -62,13 +63,13 @@
       {% include './components/some-component/some-component.njk' %}
       <section class="mt-14">
         <h3 class="text-lg font-semibold mb-5">
-          Image example 1. AVIF and WebP are generated using {{
-            '{ % image % }'
-          }} Nunjucks tag.
+          Image example 1. AVIF and WebP are generated using
+          {{ '{ % image % }' }} Nunjucks tag.
         </h3>
         {# not passing maxWidth here #}
         <div class="max-w-xs">
-          {% image './src/images/cat.jpg',
+          {%
+            image './src/images/cat.jpg',
             {
               alt: 'Cat',
               class: 'example-image block max-w-full h-auto'
@@ -83,7 +84,8 @@
         </h3>
         {# passing maxWidth=500 here #}
         <div class="max-w-xs bg-red-100">
-          {% image './src/images/wolf.png',
+          {%
+            image './src/images/wolf.png',
             {
               alt: 'Wolf',
               class: 'example-image block max-w-full h-auto'
@@ -100,8 +102,8 @@
         <h4 class="max-w-xl text-lg text-red-600 mb-6 font-bold tracking-wide">
           <span class="uppercase">Attention!</span> Please use this feature with
           caution as it may bloat the final CSS file. Inlining images could be a
-          good approach if the file is quite small, in other cases prefer `&#123;%
-          image %&#125;` tag.
+          good approach if the file is quite small, in other cases prefer
+          `&#123;% image %&#125;` tag.
         </h4>
         <div class="page-home__inline-image-example"></div>
       </section>
@@ -118,9 +120,7 @@
         <div></div>
       </div>
       <section class="mt-14">
-        <h3 class="text-lg font-semibold mb-5">
-          Tailwind CSS Example
-        </h3>
+        <h3 class="text-lg font-semibold mb-5">Tailwind CSS Example</h3>
         <div class="px-4 py-4 rounded w-64 shadow shadow-md">
           <h3 class="bold mb-2 text-blue-600 hover-default font-bold">
             Some section
@@ -130,12 +130,8 @@
               <use xlink:href="#icon-movies"></use>
             </svg>
             <div class="text-sm">
-              <div class="line -mb-0.75">
-                Movies
-              </div>
-              <div class="text-gray-600">
-                For cosy evenings
-              </div>
+              <div class="line -mb-0.75">Movies</div>
+              <div class="text-gray-600">For cosy evenings</div>
             </div>
           </div>
         </div>

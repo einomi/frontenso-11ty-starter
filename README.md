@@ -19,8 +19,8 @@
   - [Build the project for production environment](#build-the-project-for-production-environment)
   - [Creating a zip-archive `build.zip`](#creating-a-zip-archive-buildzip)
 - [Component-based Approach](#component-based-approach)
-- [Modern Image Formats](#modern-image-formats)
-- [Image Quality Settings](#image-quality-settings)
+- [Modern image formats](#modern-image-formats)
+- [Image quality settings](#image-quality-settings)
 - [TypeScript (optional)](#typescript-optional)
 - [TailwindCSS (optional)](#tailwindcss-optional)
 - [Nunjucks HTML template engine](#nunjucks-html-template-engine)
@@ -32,8 +32,9 @@
 - [{% image %} Nunjucks tag](#-image-nunjucks-tag)
 - [Inlining images as base64 strings inside Nunjucks templates using `inline` filter](#inlining-images-as-base64-strings-inside-nunjucks-templates-using-inline-filter)
 - [Inlining raster or svg images in CSS](#inlining-raster-or-svg-images-in-css)
-- [Example of using `if` statement in an HTML attribute](#example-of-using-if-statement-in-an-html-attribute)
 - [Enabling system notifications for errors (node-notifier)](#enabling-system-notifications-for-errors-node-notifier)
+- [Prettier configuration](#prettier-configuration)
+- [HTML minification](#html-minification)
 - [Examples](#examples)
 - [Useful links](#useful-links)
 
@@ -246,6 +247,35 @@ Windows: Open Settings → System → Notifications & actions and ensure notific
 Linux: This can depend on your distribution and notification daemon. In GNOME-based distros, open Settings → Notifications; in others, consult your system’s notification settings.
 
 Once notifications are enabled, any error messages sent via `node-notifier` will pop up on your system. If you don't see them, double-check that you granted permission to the correct application.
+
+## Prettier configuration
+
+This starter kit uses Prettier to format the code. The configuration is located in the `.prettierrc` file. For .njk files, it uses the `jinja-template` parser.
+
+## HTML minification
+
+HTML minification is handled during the production build process via the `beautify-html` script in package.json. It uses `html-minifier` with the following default settings:
+
+- Collapses whitespace
+- Removes comments
+- Removes optional tags
+- Removes redundant attributes
+- Removes script type attributes
+- Removes tag whitespace
+- Uses short doctype
+- Minifies CSS and JavaScript within HTML
+
+The full command is:
+
+```
+npm run beautify-html
+```
+
+### Disabling HTML minification
+
+If you need to disable HTML minification for any reason, you can:
+
+1. Remove the `beautify-html` step from the build script in `package.json`. Change:
 
 ## Examples
 

@@ -19,7 +19,7 @@
     "lint:css": "stylelint --fix \"src/**/*.{scss,sass}\"",
     "lint:js": "eslint --max-warnings 0 \"src/**/*.{jsx,js}\"",
     "pre-commit": "npm-run-all format --parallel lint:*",
-    "beautify-html": "prettier --write dist/**/*.html",
+    "beautify-html": "html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true --input-dir dist --output-dir dist --file-ext html",
     "optimize-png": "node scripts/optimize-png.js",
     "validate:ci": "npm-run-all --parallel lint:*"
   },
@@ -70,6 +70,7 @@
     "gulp-svgstore": "^7.0.1",
     "gulp-watch": "^5.0.1",
     "gulp-zip": "^5.0.2",
+    "html-minifier": "^4.0.0",
     "image-size": "^0.9.4",
     "imagemin": "^7.0.1",
     "imagemin-mozjpeg": "^9.0.0",
@@ -78,7 +79,6 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.49",
     "postcss-assets": "^5.0.0",
-    "prettier": "^3.4.2",
     "rimraf": "^3.0.2",
     "stylelint": "^13.11.0",
     "stylelint-config-idiomatic-order": "^8.1.0",
@@ -91,6 +91,8 @@
   },
   "devDependencies": {
     "husky": "4.3.8",
+    "prettier": "^3.4.2",
+    "prettier-plugin-jinja-template": "^2.0.0",
     "pretty-quick": "^4.0.0"
   }
 }

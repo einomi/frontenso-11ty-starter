@@ -1,13 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>
-      {% block title %}
-      {% endblock %}| Site Name
-    </title>
-    <meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    {# prettier-ignore-start #}
+    <title>{% block title %}{% endblock %}| Site Name</title>
+    {# prettier-ignore-end #}
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
     <meta name="description" content="Set a proper description" />
 
     {% block stylesheets %}
