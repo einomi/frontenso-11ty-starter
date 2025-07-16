@@ -1,12 +1,9 @@
 .transition-active {
-  transition: color $default-transition-duration $default-transition-function,
-    background $default-transition-duration $default-transition-function,
-    border-color $default-transition-duration $default-transition-function,
-    opacity $default-transition-duration $default-transition-function;
+  @extend %transition-active;
 }
 
 .transition-hover {
-  transition: none;
+  @extend %transition-hover;
 }
 
 body {

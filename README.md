@@ -115,8 +115,6 @@ This starter uses `@11ty/eleventy-img` to generate modern image formats (AVIF, W
 
 You can change image compression settings for avif, webp, jpeg files in `.eleventy.js` config.
 
-Png are compressed with [pngquant](https://pngquant.org/) as it provides the best compression. You can change png compression settings in `optimize-png.js` config.
-
 ## TypeScript (optional)
 
 This boilerplate has built-in support for TypeScript, but it is completely optional to use it during development. We have chosen to use JSDoc notation ([which is officially supported by TypeScript team](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)) to provide TypeScript support. This means that you don't have to write your code using TypeScript syntax, and can instead continue to write your code using JavaScript syntax with JSDoc notation for TypeScript support. This approach also allows you to easily disable TypeScript if you do not need it at some point during your development process, for example, to speed up development or if you have new developers working on the project who are not familiar with TypeScript.

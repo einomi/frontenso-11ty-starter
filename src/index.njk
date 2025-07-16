@@ -89,7 +89,7 @@
           generated.
         </h3>
         {# passing maxWidth=500 here #}
-        <div class="max-w-xs bg-gray-800 p-2 rounded">
+        <div class="max-w-xs bg-gray-800 rounded">
           {%
             image './src/images/wolf.png',
             {
@@ -101,12 +101,14 @@
         </div>
       </section>
       <section class="mt-14">
-        <h3 class="text-lg font-semibold mb-1 max-w-xl">
+        <h3 class="text-lg font-semibold mb-2 max-w-xl">
           An image inlined in CSS example (compress such images manually!). Not
-          recommended for wide usage, see below.
+          recommended for wide usage.
         </h3>
-        <h4 class="max-w-xl text-lg text-red-400 mb-6 font-bold tracking-wide">
-          <span class="uppercase">Attention!</span> Please use this feature with
+        <h4
+          class="max-w-xl text-lg text-amber-200 mb-6 font-bold tracking-wide"
+        >
+          <span class="uppercase">Warning!</span> Please use this feature with
           caution as it may bloat the final CSS file. Inlining images could be a
           good approach if the file is quite small, in other cases prefer
           `&#123;% image %&#125;` tag.

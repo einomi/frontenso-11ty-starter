@@ -1,11 +1,14 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-
 module.exports = {
   mode: 'jit',
+  purge: ['./src/**/*.{js,jsx,ts,tsx}', './src/**/*.njk', './src/**/*.svg'],
   theme: {
     screens: {
       xs: '375px',
-      ...defaultTheme.screens,
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
     },
     container: {
       center: true,
@@ -20,5 +23,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './src/**/*.njk', './src/**/*.svg'],
+  plugins: [],
 };

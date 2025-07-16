@@ -2,7 +2,8 @@
 @import 'colors';
 @import 'lib/base';
 @import 'fonts';
-@import 'reset';
+// Use reset only if you disable Tailwind since Tailwind resets the styles
+// @import 'reset';
 @import 'global';
 @import 'layout';
 @import 'extends';

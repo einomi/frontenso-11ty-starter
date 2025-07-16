@@ -1,9 +1,21 @@
 @mixin button-reset {
   border: none;
+  border-radius: 0;
   appearance: none;
   background-color: transparent;
-  border-radius: 0;
   cursor: pointer;
   text-decoration: none;
   user-select: none;
+}
+
+%transition-active {
+  transition:
+    color $default-transition-duration $default-transition-function,
+    background $default-transition-duration $default-transition-function,
+    border-color $default-transition-duration $default-transition-function,
+    opacity $default-transition-duration $default-transition-function;
+}
+
+%transition-hover {
+  transition: none;
 }
