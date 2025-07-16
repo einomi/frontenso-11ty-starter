@@ -86,8 +86,8 @@
     "stylelint-scss": "^3.19.0",
     "tailwindcss": "^2.2.19",
     "through2": "^4.0.2",
-    "webpack": "^5.97.1",
-    "webpack-cli": "^4.5.0"
+    "webpack": "^5.100.2",
+    "webpack-cli": "^4.10.0"
   },
   "devDependencies": {
     "husky": "4.3.8",
