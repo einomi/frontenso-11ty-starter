@@ -86,14 +86,23 @@ function inline(imgPath, callback) {
 module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy({ 'src/public': '/' });
 
-  eleventyConfig.setBrowserSyncConfig({
-    files: [
-      'dist/css/*.css',
-      'dist/*.html',
-      'dist/images/*.avif',
-      'dist/js/*.js',
+  eleventyConfig.setServerOptions({
+    port: 9000,
+
+    // open the tab automatically
+    open: true,
+
+    // keep live‑reload‑snippet
+    liveReload: true,
+
+    // dom‑diff updates CSS/HTML without full page reload
+    domDiff: true,
+
+    watch: [
+      'dist/css/**/*.css',
+      'dist/js/**/*.js',
+      'dist/images/**/*.{avif,webp,jpg,jpeg,png,gif,svg}',
     ],
-    open: false,
   });
 
   eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
